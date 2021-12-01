@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-import UserForm from './UserForm';
 
-class Signup extends Component {
-    handleSuccessfulAuth = data => {
-        this.props.handleLogin(data)
-        this.props.history.push("/companies")
-    }
-
+class Logout extends Component {
     handleLogoutClick = () => {
         fetch("http://localhost:3001/logout", {
             method: "DELETE"
@@ -19,10 +13,9 @@ class Signup extends Component {
         return (
             <div>
                 <button onClick={this.handleLogoutClick}>Logout</button>
-                <UserForm handleSuccessfulAuth={this.handleSuccessfulAuth} />
             </div>
         )
     }
 }
 
-export default Signup;
+export default Logout;
