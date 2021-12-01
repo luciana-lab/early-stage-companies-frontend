@@ -10,11 +10,12 @@ class Logout extends Component {
     }
 
     handleLogoutClick = () => {
-        fetch("http://localhost:3001/logout", {
+        fetch("/logout", {
             method: "DELETE"
         }, { withCredentials: true })
             .then(resp => resp.json())
-            .then(data => this.props.handleLogout())
+            // .then(data => console.log(data))
+            .then(data => this.props.handleLogout(data))
             .catch(error => console.log("logout error", error))
     }
 

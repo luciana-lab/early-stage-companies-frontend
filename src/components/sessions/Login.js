@@ -11,7 +11,6 @@ class Login extends Component {
         }
     }
 
-
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
@@ -19,7 +18,7 @@ class Login extends Component {
     }
 
     handleSubmit = e => {
-        fetch("http://localhost:3001/sessions", {
+        fetch("/sessions", {
             method: "POST",
             headers: {
                 "Access-Control-Allow-Origin": "*",

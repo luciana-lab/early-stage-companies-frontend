@@ -23,7 +23,7 @@ class UserForm extends Component {
 
     handleSubmit = e => {
         console.log(this.state.password)
-        fetch("http://localhost:3001/users", {
+        fetch("/users", {
             method: "POST",
             headers: {
                 "Access-Control-Allow-Origins": "*",

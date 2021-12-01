@@ -8,7 +8,7 @@ class Registration extends Component {
     }
 
     checkLoginStatus() {
-        fetch("http://localhost:3001/logged_in", { withCredentials: true })
+        fetch("/logged_in", { withCredentials: true })
             .then(resp => {
                 // console.log("logged in?", resp)
                 if (resp.ok) {
