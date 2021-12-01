@@ -17,7 +17,7 @@ function CompanyList() {
     return (
         <div>
             {companies.map(company =>
-                <div>
+                <div key={company.id}>
                     <h2>{company.name}</h2>
                     <p>{company.industry}</p>
                     <p>{company.description}</p>
