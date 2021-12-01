@@ -14,6 +14,28 @@ class Login extends Component {
     }
 
     handleSubmit = e => {
+        fetch("http://localhost:3001/sessions", {
+            method: "POST",
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                email: this.state.email,
+                password: this.state.password
+            })
+        },
+            { withCredentials: true }
+        ).then(resp => {
+            if (resp.data.logged_in) {
+                console.log(resp)
+                this.props.handleSuccessfulAuth(resp.data)
+            } else {
+                throw new Error()
+            }
+        }).catch(error => console.log("login error", error))
+
         e.preventDefault()
     }
 
