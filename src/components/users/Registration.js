@@ -1,19 +1,47 @@
 import React, { Component } from "react";
-import UserForm from "./UserForm";
 import Logout from "./Logout";
-import Login from "../sessions/Login";
 
 class Registration extends Component {
-    handleSuccessfulAuth = data => {
-        this.props.handleLogin(data)
-        this.props.history.push("/companies")
+    state = {
+        // loggedInStatus: "NOT_LOGGED_IN",
+        user: {}
     }
+
+    checkLoginStatus() {
+        fetch("http://localhost:3001/logged_in", { withCredentials: true })
+            .then(resp => {
+                console.log("logged in?", resp)
+                if (resp.data.logged_in) {
+                    this.setState({
+                        user: resp.data.user
+                    })
+                } else if (!resp.data.logged_in) {
+                    this.setState({
+                        user: {}
+                    })
+                }
+            })
+            .catch(error => {
+                console.log("check login error", error)
+            })
+    }
+
+    componentDidMount() {
+        this.checkLoginStatus()
+    }
+
+    handleLogin = data => {
+        this.setState({ user: data.user })
+    }
+
+    handleLogout = () => {
+        this.setState({ user: {} })
+    }
+
     render() {
         return (
             <div>
-                <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
-                <UserForm handleSuccessfulAuth={this.handleSuccessfulAuth} />
-                <Logout />
+                <Logout {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} />
             </div>
         )
     }
