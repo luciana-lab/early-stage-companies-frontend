@@ -45,7 +45,7 @@ class Registration extends Component {
     render() {
         return (
             <div>
-                <Logout handleLogin={this.handleLogin} handleLogout={this.handleLogout} />
+                <Logout handleLogin={this.handleLogin} handleLogout={this.handleLogout} routerProps={this.props.routerProps} />
             </div>
         )
     }

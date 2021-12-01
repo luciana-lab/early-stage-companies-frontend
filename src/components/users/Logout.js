@@ -6,7 +6,8 @@ import { Redirect } from 'react-router-dom'
 class Logout extends Component {
     handleSuccessfulAuth = data => {
         this.props.handleLogin(data)
-        return <Redirect to="/companies" />
+        this.props.routerProps.history.push("/")
+        // return <Redirect to="/companies" />
     }
 
     handleLogoutClick = () => {

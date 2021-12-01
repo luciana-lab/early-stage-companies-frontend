@@ -8,7 +8,7 @@ function Pages() {
         <div>
             <h1>Hello</h1>
             <Switch>
-                <Route path="/signup"><Registration /></Route>
+                <Route path="/signup" component={(routerProps) => <Registration routerProps={routerProps} />} />
                 <Route path="/companies"><CompanyList /></Route>
             </Switch>
         </div>
