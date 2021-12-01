@@ -21,6 +21,35 @@ class Registration extends Component {
         })
     }
 
+    handleSubmit = e => {
+        fetch("http://localhost:3001/users", {
+            method: "POST",
+            headers: {
+                "Access-Control-Allow-Origins": "*",
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                firs_name: this.state.first_name,
+                last_name: this.state.last_name,
+                email: this.state.email,
+                password: this.state.password,
+                about: this.state.about,
+                image: this.state.image
+            })
+        },
+            { withCredentials: true }
+        ).then(resp => {
+            if (resp.formData.status === "created") {
+                this.props.handleSuccessfulAuth(resp.data)
+            }
+        }).catch(error => {
+            console.log("registration error", error)
+        })
+
+        e.preventDefault()
+    }
+
     render() {
         return (
             <div>
