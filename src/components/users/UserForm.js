@@ -22,6 +22,7 @@ class UserForm extends Component {
     }
 
     handleSubmit = e => {
+        console.log(this.state.password)
         fetch("http://localhost:3001/users", {
             method: "POST",
             headers: {
@@ -30,7 +31,7 @@ class UserForm extends Component {
                 Accept: "application/json"
             },
             body: JSON.stringify({
-                firs_name: this.state.first_name,
+                first_name: this.state.first_name,
                 last_name: this.state.last_name,
                 email: this.state.email,
                 password: this.state.password,
@@ -39,13 +40,17 @@ class UserForm extends Component {
             })
         },
             { withCredentials: true }
-        ).then(resp => {
-            if (resp.formData.status === "created") {
-                this.props.handleSuccessfulAuth(resp.data)
-            }
-        }).catch(error => {
-            console.log("registration error", error)
-        })
+        )
+            .then(resp => resp.json())
+            .then(data => {
+                // debugger
+                console.log("user created?", data)
+                if (data.status === "created") {
+                    this.props.handleSuccessfulAuth(data.user)
+                }
+            }).catch(error => {
+                console.log("registration error", error)
+            })
 
         e.preventDefault()
     }

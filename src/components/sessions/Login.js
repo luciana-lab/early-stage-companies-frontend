@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 
 class Login extends Component {
-    state = {
-        email: "",
-        password: "",
-        loginErrors: ""
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            email: "",
+            password: "",
+            loginErrors: ""
+        }
     }
+
 
     handleChange = e => {
         this.setState({
@@ -27,14 +32,18 @@ class Login extends Component {
             })
         },
             { withCredentials: true }
-        ).then(resp => {
-            if (resp.data.logged_in) {
-                console.log(resp)
-                this.props.handleSuccessfulAuth(resp.data)
-            } else {
-                throw new Error()
-            }
-        }).catch(error => console.log("login error", error))
+        )
+            .then(resp => resp.json())
+            .then(data => {
+                // debugger
+                // console.log(data)
+                if (data.logged_in) {
+                    console.log(data)
+                    this.props.handleSuccessfulAuth(data.user)
+                } else {
+                    throw new Error()
+                }
+            }).catch(error => console.log("login error", error))
 
         e.preventDefault()
     }

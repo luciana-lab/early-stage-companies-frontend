@@ -10,15 +10,19 @@ class Registration extends Component {
     checkLoginStatus() {
         fetch("http://localhost:3001/logged_in", { withCredentials: true })
             .then(resp => {
-                console.log("logged in?", resp)
-                if (resp.data.logged_in) {
-                    this.setState({
-                        user: resp.data.user
-                    })
-                } else if (!resp.data.logged_in) {
-                    this.setState({
-                        user: {}
-                    })
+                // console.log("logged in?", resp)
+                if (resp.ok) {
+                    return resp.json()
+                } else {
+                    throw new Error()
+                }
+            })
+            .then(data => {
+                console.log("data?", data)
+                if (data.logged_in) {
+                    this.setState({ user: data.user })
+                } else if (!data.logged_in) {
+                    this.setState({ user: {} })
                 }
             })
             .catch(error => {
@@ -41,7 +45,7 @@ class Registration extends Component {
     render() {
         return (
             <div>
-                <Logout {...props} handleLogin={this.handleLogin} handleLogout={this.handleLogout} />
+                <Logout handleLogin={this.handleLogin} handleLogout={this.handleLogout} />
             </div>
         )
     }

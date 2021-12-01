@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import Login from '../sessions/Login';
 import UserForm from './UserForm';
+import { Redirect } from 'react-router-dom'
 
 class Logout extends Component {
     handleSuccessfulAuth = data => {
         this.props.handleLogin(data)
-        this.props.history.push("/companies")
+        return <Redirect to="/companies" />
     }
 
     handleLogoutClick = () => {
         fetch("http://localhost:3001/logout", {
             method: "DELETE"
         }, { withCredentials: true })
-            .then(resp => this.props.handleLogout())
+            .then(resp => resp.json())
+            .then(data => this.props.handleLogout())
             .catch(error => console.log("logout error", error))
     }
 
