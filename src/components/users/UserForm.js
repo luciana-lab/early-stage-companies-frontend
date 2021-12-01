@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Registration extends Component {
+class UserForm extends Component {
     constructor(props) {
         super(props)
 
@@ -71,10 +71,12 @@ class Registration extends Component {
 
                     <label>Image</label>
                     <input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
+
+                    <input type="submit" value="Create Account" />
                 </form>
             </div>
         )
     }
 }
 
-export default Registration;
+export default UserForm;
