@@ -13,7 +13,6 @@ class CompanyForm extends Component {
         location: "",
         need_category: "",
         need: "",
-        userId: "" // How can to pass the user id
     }
 
     handleChange = e => {
@@ -34,7 +33,6 @@ class CompanyForm extends Component {
             location: "",
             need_category: "",
             need: "",
-            userId: ""
         })
     }
 
@@ -46,26 +44,27 @@ class CompanyForm extends Component {
                     <input type="text" name="name" id="company-name-input" value={this.state.name} onChange={this.handleChange} />
                     <br />
 
-                    <label htmlFor="company-industry-select">Select Industry</label>
+                    <label htmlFor="company-industry-select">Industry</label>
                     <select name="industry" id="company-industry-select" value={this.state.industry} onChange={this.handleChange}>
-                        <option value="agriculture">Agriculture</option>
-                        <option value="arts">Arts</option>
-                        <option value="automotive">Automotive</option>
-                        <option value="beauty">Beauty</option>
-                        <option value="construction">Construction</option>
-                        <option value="education">Education</option>
-                        <option value="energy">Energy</option>
-                        <option value="financial services">Finance</option>
-                        <option value="fitness">Fitness</option>
-                        <option value="food & beverage">Food & Beverage</option>
-                        <option value="healthcare">Healthcare</option>
-                        <option value="healthcare">Legal</option>
-                        <option value="non-profit/social">Non-Profit/Social</option>
-                        <option value="supply chain">Supply Chain</option>
-                        <option value="technology">Technology</option>
-                        <option value="tourism">Tourism</option>
-                        <option value="wellness">Wellness</option>
-                        <option value="other">Other</option>
+                        <option value="none" selecteddisabledhidden="true">Select an Option</option>
+                        <option value="Agriculture">Agriculture</option>
+                        <option value="Arts">Arts</option>
+                        <option value="Automotive">Automotive</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Construction">Construction</option>
+                        <option value="Education">Education</option>
+                        <option value="Energy">Energy</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Fitness">Fitness</option>
+                        <option value="Food & Beverage">Food & Beverage</option>
+                        <option value="Healthcare">Healthcare</option>
+                        <option value="Legal">Legal</option>
+                        <option value="Non-profit/Social">Non-Profit/Social</option>
+                        <option value="Supply Chain">Supply Chain</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Tourism">Tourism</option>
+                        <option value="Wellness">Wellness</option>
+                        <option value="Other">Other</option>
                     </select>
                     <br />
 
@@ -81,8 +80,8 @@ class CompanyForm extends Component {
                     <input type="text" name="video" id="company-video-input" value={this.state.video} onChange={this.handleChange} />
                     <br />
 
-                    <label htmlFor="company-location-select">Select Community Location</label>
-                    <input list="select-location-options" name="location" id="company-location-select" value={this.state.location} onChange={this.handleChange} />
+                    <label htmlFor="company-location-select">Community Location</label>
+                    <input list="select-location-options" name="location" id="company-location-select" placeholder="Select or Add an Option" value={this.state.location} onChange={this.handleChange} />
                     <datalist id="select-location-options">
                         <option value="Greater San Marcos, TX" />
                         <option value="Joplin, MO" />
@@ -95,6 +94,7 @@ class CompanyForm extends Component {
 
                     <label htmlFor="company-need-category-select">Help Need Category</label>
                     <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange}>
+                        <option value="none" selecteddisabledhidden="true">Select an Option</option>
                         <option value="Admin">Admin</option>
                         <option value="Finance">Finance</option>
                         <option value="Networking">Networking</option>
@@ -105,8 +105,8 @@ class CompanyForm extends Component {
                     </select>
                     <br />
 
-                    <label htmlFor="company-need-input">Describe Your Needs</label>
-                    <input type="text" name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} />
+                    <label htmlFor="company-need-input">Describe Your Need</label>
+                    <textarea name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} />
                     <br />
 
                     <input type="submit" value="Submit" />
