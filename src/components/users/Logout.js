@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Login from '../sessions/Login';
 import UserForm from './UserForm';
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 
 class Logout extends Component {
     handleSuccessfulAuth = data => {
