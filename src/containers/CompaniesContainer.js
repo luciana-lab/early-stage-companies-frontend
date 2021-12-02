@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCompanies } from '../actions/companiesActions';
 import Companies from '../components/companies/Companies';
+// import Pages from '../components/Pages';
 
 class CompaniesContainer extends Component {
 
@@ -11,9 +12,12 @@ class CompaniesContainer extends Component {
     }
 
     render() {
+        // console.log(this.props.companies)
         return (
             <div>
+                {/* <CompanyForm companies={this.props.companies} /> */}
                 <Companies companies={this.props.companies} />
+                {/* <Pages companies={this.props.companies} /> */}
             </div>
         )
     }

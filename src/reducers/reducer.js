@@ -24,7 +24,7 @@ function companiesReducer(state = [], action) {
             return action.payload
 
         case ADD_COMPANY:
-            return { ...state, companies: [...state.companies, action.payload] }
+            return [...state, action.payload]
 
         default:
             return state

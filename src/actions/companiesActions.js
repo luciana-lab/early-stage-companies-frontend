@@ -13,13 +13,15 @@ export function addCompany(company) {
         fetch("/companies", {
             method: "POST",
             headers: {
-                "Access-Control-Allow-Origins": "*",
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
             body: JSON.stringify(company)
         })
             .then(resp => resp.json())
-            .then(data => dispatch({ type: ADD_COMPANY, payload: data }))
+            .then(data => {
+                // console.log(data)
+                dispatch({ type: ADD_COMPANY, payload: data })
+            })
     }
 }

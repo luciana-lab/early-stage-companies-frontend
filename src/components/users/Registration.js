@@ -3,7 +3,6 @@ import Logout from "./Logout";
 
 class Registration extends Component {
     state = {
-        // loggedInStatus: "NOT_LOGGED_IN",
         user: {}
     }
 

@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 
 class Company extends Component {
-    render() {
-        const { company } = this.props;
 
+    // state = {
+    //     companyOne: {}
+    // }
+
+    // componentDidMount() {
+    //     fetch(`/companies/${this.props.routerInfo.match.params.id}`)
+    //         .then(resp => resp.json())
+    //         .then(company => this.setState({ company }))
+    // }
+
+    // fetch based on id in params
+    //change state to render that company
+
+    render() {
+        // console.log("props",this.props)
+        const { company } = this.props;
+        // debugger
         return (
             <div>
                 <h2>{company.name}</h2>

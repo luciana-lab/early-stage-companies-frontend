@@ -10,7 +10,6 @@ class CompanyForm extends Component {
         image: "",
         website: "",
         video: "",
-        location: "",
         need_category: "",
         need: "",
     }
@@ -20,32 +19,26 @@ class CompanyForm extends Component {
     }
 
     handleSubmit = e => {
-        this.props.dispatchAddCompany(this.state)
         e.preventDefault()
-
-        this.setState({
-            name: "",
-            industry: "",
-            description: "",
-            image: "",
-            website: "",
-            video: "",
-            location: "",
-            need_category: "",
-            need: "",
-        })
+        this.props.dispatchAddCompany(this.state)
+        this.props.routerProps.history.push("/companies")
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="company-name-input">Company Name</label>
-                    <input type="text" name="name" id="company-name-input" value={this.state.name} onChange={this.handleChange} />
+                    <input type="text" name="name" id="company-name-input" value={this.state.name} onChange={this.handleChange} required />
+                    <br />
+
+                    <label htmlFor="company-website-input">Website</label>
+                    <input type="text" name="website" id="company-website-input" value={this.state.website} onChange={this.handleChange} />
                     <br />
 
                     <label htmlFor="company-industry-select">Industry</label>
-                    <select name="industry" id="company-industry-select" value={this.state.industry} onChange={this.handleChange}>
+                    <select name="industry" id="company-industry-select" value={this.state.industry} onChange={this.handleChange} required>
                         <option value="none" selecteddisabledhidden="true">Select an Option</option>
                         <option value="Agriculture">Agriculture</option>
                         <option value="Arts">Arts</option>
@@ -69,7 +62,7 @@ class CompanyForm extends Component {
                     <br />
 
                     <label htmlFor="company-description-text">Description</label>
-                    <textarea name="description" id="company-description-text" value={this.state.description} onChange={this.handleChange} />
+                    <textarea name="description" id="company-description-text" value={this.state.description} onChange={this.handleChange} required />
                     <br />
 
                     <label htmlFor="company-image-input">Image</label>
@@ -80,20 +73,8 @@ class CompanyForm extends Component {
                     <input type="text" name="video" id="company-video-input" value={this.state.video} onChange={this.handleChange} />
                     <br />
 
-                    <label htmlFor="company-location-select">Community Location</label>
-                    <input list="select-location-options" name="location" id="company-location-select" placeholder="Select or Add an Option" value={this.state.location} onChange={this.handleChange} />
-                    <datalist id="select-location-options">
-                        <option value="Greater San Marcos, TX" />
-                        <option value="Joplin, MO" />
-                        <option value="Lakeland, FL" />
-                        <option value="Sedalia, MO" />
-                        <option value="Tampa, FL" />
-                        <option value="Westminster, MD" />
-                    </datalist>
-                    <br />
-
                     <label htmlFor="company-need-category-select">Help Need Category</label>
-                    <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange}>
+                    <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange} required>
                         <option value="none" selecteddisabledhidden="true">Select an Option</option>
                         <option value="Admin">Admin</option>
                         <option value="Finance">Finance</option>
@@ -106,7 +87,7 @@ class CompanyForm extends Component {
                     <br />
 
                     <label htmlFor="company-need-input">Describe Your Need</label>
-                    <textarea name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} />
+                    <textarea name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} required />
                     <br />
 
                     <input type="submit" value="Submit" />
