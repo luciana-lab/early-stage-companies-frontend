@@ -20,12 +20,18 @@ class CompanyForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
+        // debugger
+        // if (this.props.routerProps.match.patch === "/companies/new") {
         this.props.dispatchAddCompany(this.state)
         this.props.routerProps.history.push("/companies")
+        // }
+        // this.props.dispatchEditCompany(this.state)
+        // this.props.routerProps.history.push(`/companies/${parseInt(this.props.routerProps.match.params.id)}`)
+
     }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props.routerProps)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -99,7 +105,8 @@ class CompanyForm extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        dispatchAddCompany: company => dispatch(addCompany(company))
+        dispatchAddCompany: company => dispatch(addCompany(company)),
+        // dispatchEditCompany: company => dispatch(editCompany(company))
     }
 }
 

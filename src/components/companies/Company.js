@@ -1,6 +1,7 @@
 import React from 'react';
 import { removeCompany } from '../../actions/companiesActions';
 import { connect } from 'react-redux';
+import CompanyEditForm from './CompanyEditForm';
 
 const Company = ({ companies, routerInfo, removeCompany }) => {
     // console.log(companies, routerInfo)
@@ -8,9 +9,14 @@ const Company = ({ companies, routerInfo, removeCompany }) => {
     console.log(company)
     // debugger
 
+    function handleEditCompany() {
+        routerInfo.history.push(`/companies/${company.id}/edit`)
+    }
+
     function handleDeleteCompany() {
         // debugger
         removeCompany(company.id)
+        routerInfo.history.push("/companies")
     }
 
     return (
@@ -23,6 +29,7 @@ const Company = ({ companies, routerInfo, removeCompany }) => {
             <p>{company && company.video}</p>
             <p>{company && company.need_category}</p>
             <p>{company && company.need}</p>
+            <button onClick={handleEditCompany}>Edit Company</button>
             <button onClick={handleDeleteCompany}>Delete Company</button>
             <br />
             <p>{company && company.user.first_name}</p>

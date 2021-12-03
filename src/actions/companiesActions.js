@@ -25,7 +25,7 @@ export function addCompany(company) {
 
 export function editCompany(company) {
     return dispatch => {
-        fetch(`/companies/${id}`, {
+        fetch(`/companies/${company.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
