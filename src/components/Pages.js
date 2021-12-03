@@ -16,7 +16,7 @@ function Pages({ companies }) {
                 <Route path="/signup" component={routerProps => <Registration routerProps={routerProps} />} />
                 <Route exact path="/companies" component={routerProps => <Companies companies={companies} routerInfo={routerProps} />} />
                 <Route exact path="/companies/new" component={routerProps => <CompanyForm routerProps={routerProps} />} />
-                <Route exact path="/companies/:id" component={routerProps => <Company routerInfo={routerProps} companies={companies} />} />
+                <Route exact path="/companies/:id" component={routerProps => <Company routerProps={routerProps} companies={companies} />} />
                 <Route exact path="/companies/:id/edit" component={routerProps => <CompanyEditForm routerProps={routerProps} companies={companies} />} />
             </Switch>
         </div>
