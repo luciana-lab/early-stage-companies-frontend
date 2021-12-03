@@ -1,7 +1,6 @@
 import React from 'react';
 import { removeCompany } from '../../actions/companiesActions';
 import { connect } from 'react-redux';
-import CompanyEditForm from './CompanyEditForm';
 
 const Company = ({ companies, routerInfo, removeCompany }) => {
     // console.log(companies, routerInfo)

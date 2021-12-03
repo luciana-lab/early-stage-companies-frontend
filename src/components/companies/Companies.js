@@ -1,5 +1,6 @@
 import React from 'react';
 // import Company from './Company';
+import { NavLink } from 'react-router-dom';
 
 const Companies = ({ companies }) => {
     // const { companies } = this.props
@@ -19,6 +20,7 @@ const Companies = ({ companies }) => {
             {companies.map(company => {
                 return (
                     <div key={company.id}>
+                        {/* <Link to="/companies/${company.id}"> */}
                         <h2>{company.name}</h2>
                         <p>{company.industry}</p>
                         <p>{company.description}</p>
