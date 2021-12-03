@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COMPANY, GET_COMPANIES } from '../actions/constants';
+import { ADD_COMPANY, DELETE_COMPANY, GET_COMPANIES } from '../actions/constants';
 
 const rootReducer = combineReducers({
     users: usersReducer,
@@ -25,6 +25,10 @@ function companiesReducer(state = [], action) {
 
         case ADD_COMPANY:
             return [...state, action.payload]
+
+        case DELETE_COMPANY:
+            const companies = state.filter(company => company.id !== action.payload)
+            return companies
 
         default:
             return state
