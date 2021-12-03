@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const Companies = ({ companies }) => {
     return (
-
         <div>
             {companies.map(company => {
                 return (

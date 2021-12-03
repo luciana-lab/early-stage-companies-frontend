@@ -3,17 +3,14 @@ import { removeCompany } from '../../actions/companiesActions';
 import { connect } from 'react-redux';
 
 const Company = ({ companies, routerInfo, removeCompany }) => {
-    // console.log(companies, routerInfo)
-    let company = companies.find(c => c.id === parseInt(routerInfo.match.params.id))
+    const company = companies.find(c => c.id === parseInt(routerInfo.match.params.id))
     console.log(company)
-    // debugger
 
     function handleEditCompany() {
         routerInfo.history.push(`/companies/${company.id}/edit`)
     }
 
     function handleDeleteCompany() {
-        // debugger
         removeCompany(company.id)
         routerInfo.history.push("/companies")
     }
@@ -47,11 +44,5 @@ const Company = ({ companies, routerInfo, removeCompany }) => {
         </div>
     )
 }
-
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         deleteCompany: id => dispatch(removeCompany(id))
-//     }
-// }
 
 export default connect(null, { removeCompany })(Company);

@@ -26,7 +26,6 @@ class CompanyEditForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-
         this.props.dispatchEditCompany({ ...this.state, id: this.company.id })
         this.props.routerProps.history.push(`/companies/${parseInt(this.props.routerProps.match.params.id)}`)
     }
