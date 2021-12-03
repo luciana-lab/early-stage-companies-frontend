@@ -16,7 +16,6 @@ function Pages({ companies }) {
                 <Route exact path="/companies" component={routerProps => <Companies companies={companies} routerInfo={routerProps} />} />
                 <Route exact path="/companies/new" component={routerProps => <CompanyForm routerProps={routerProps} />} />
                 <Route exact path="/companies/:id" component={routerProps => <Company routerInfo={routerProps} companies={companies} />} />
-                {/* <Route exact path="/companies/:id"><Company /></Route> */}
             </Switch>
         </div>
     )
