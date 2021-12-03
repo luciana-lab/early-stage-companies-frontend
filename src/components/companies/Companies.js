@@ -1,27 +1,16 @@
 import React from 'react';
-// import Company from './Company';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Companies = ({ companies }) => {
-    // const { companies } = this.props
-    // debugger
-
-    /*
-    return (
-        <div>
-            {companies.map(company => <Company key={company.id} company={company} />)}
-        </div>
-    )
-*/
-
     return (
 
         <div>
             {companies.map(company => {
                 return (
                     <div key={company.id}>
-                        {/* <Link to="/companies/${company.id}"> */}
-                        <h2>{company.name}</h2>
+                        <Link to={`/companies/${company.id}`}>
+                            <h2>{company.name}</h2>
+                        </Link>
                         <p>{company.industry}</p>
                         <p>{company.description}</p>
                         <p>{company.website}</p>
