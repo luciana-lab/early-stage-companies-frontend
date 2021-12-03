@@ -26,14 +26,13 @@ function companiesReducer(state = [], action) {
         case ADD_COMPANY:
             return [...state, action.payload]
 
-        case DELETE_COMPANY:
-            const companies = state.filter(company => company.id !== action.payload)
-            return companies
-
         case EDIT_COMPANY:
             const companyIndex = state.findIndex(company => company.id === action.payload.id)
             return [...state.slice(0, companyIndex), action.payload, ...state.slice(companyIndex + 1)]
 
+        case DELETE_COMPANY:
+            const companies = state.filter(company => company.id !== action.payload)
+            return companies
 
         default:
             return state

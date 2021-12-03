@@ -1,4 +1,4 @@
-import { ADD_COMPANY, DELETE_COMPANY, GET_COMPANIES } from "./constants";
+import { ADD_COMPANY, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES } from "./constants";
 
 export function fetchCompanies() {
     return dispatch => {
@@ -20,6 +20,21 @@ export function addCompany(company) {
         })
             .then(resp => resp.json())
             .then(data => dispatch({ type: ADD_COMPANY, payload: data }))
+    }
+}
+
+export function editCompany(company) {
+    return dispatch => {
+        fetch(`/companies/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(company)
+        })
+            .then(resp => resp.json())
+            .then(data => dispatch({ type: EDIT_COMPANY, payload: data }))
     }
 }
 
