@@ -1,48 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// const Company = (props) => {
-//     console.log(props.company)
-//     // let oneCompany = company.find(c => c.id === parseInt(routerInfo.match.params.id))
+const Company = ({ companies, routerInfo }) => {
+    // console.log(companies, routerInfo)
+    let company = companies.find(c => c.id === parseInt(routerInfo.match.params.id))
+    // console.log(company)
 
-//     return (
-//         <div>
-//             {/* <h2>{oneCompany && oneCompany.name}</h2> */}
-//         </div>
-//     )
-// }
-
-class Company extends Component {
-
-    state = {
-        company: {}
-    }
-
-    componentDidMount() {
-        fetch(`/companies/${this.props.routerInfo.match.params.id}`)
-            .then(resp => resp.json())
-            .then(company => this.setState({ company }))
-    }
-
-    render() {
-        // console.log(this.props.routerInfo.match.params.id)
-        // console.log(this.state.company)
-
-        const company = this.state.company;
-        // let companyFiltered = company.find(company => company.id === parseInt(company.routerInfo.match.params.id))
-
-        return (
-            <div>
-                <h2>{company.name}</h2>
-                <p>{company.industry}</p>
-                <p>{company.description}</p>
-                <p>{company.website}</p>
-                <p>{company.image}</p>
-                <p>{company.video}</p>
-                <p>{company.need_category}</p>
-                <p>{company.need}</p>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <h2>{company && company.name}</h2>
+            <p>{company && company.industry}</p>
+            <p>{company && company.description}</p>
+            <p>{company && company.website}</p>
+            <p>{company && company.image}</p>
+            <p>{company && company.video}</p>
+            <p>{company && company.need_category}</p>
+            <p>{company && company.need}</p>
+        </div>
+    )
 }
 
 export default Company;

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COMPANY, GET_COMPANIES, GET_COMPANY } from '../actions/constants';
+import { ADD_COMPANY, GET_COMPANIES } from '../actions/constants';
 
 const rootReducer = combineReducers({
     users: usersReducer,
