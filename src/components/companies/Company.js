@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { removeCompany } from '../../actions/companiesActions';
 import { connect } from 'react-redux';
+import ContributionForm from './contributions/ContributionForm';
 // import { render } from '@testing-library/react';
 
 class Company extends Component {
     constructor(props) {
         super(props)
-
         this.company = props.companies.find(c => c.id === parseInt(this.props.routerProps.match.params.id))
+
         this.state = {
-            contribution: ""
+            contributionClicked: false
         }
     }
 
@@ -23,7 +24,13 @@ class Company extends Component {
     }
 
     handleAddContribution = () => {
+        this.setState({ contributionClicked: true })
+    }
 
+    displayContributionForm = () => {
+        if (this.state.contributionClicked === true) {
+            return <ContributionForm company={this.company} />
+        }
     }
 
     render() {
@@ -54,6 +61,7 @@ class Company extends Component {
                     )
                 })}
                 <button onClick={this.handleAddContribution}>Add a contribution</button>
+                {this.displayContributionForm()}
             </div>
         )
     }
