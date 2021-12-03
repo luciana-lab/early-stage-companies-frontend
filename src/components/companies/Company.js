@@ -1,24 +1,35 @@
 import React, { Component } from 'react';
 
+// const Company = (props) => {
+//     console.log(props.company)
+//     // let oneCompany = company.find(c => c.id === parseInt(routerInfo.match.params.id))
+
+//     return (
+//         <div>
+//             {/* <h2>{oneCompany && oneCompany.name}</h2> */}
+//         </div>
+//     )
+// }
+
 class Company extends Component {
 
-    // state = {
-    //     companyOne: {}
-    // }
+    state = {
+        company: {}
+    }
 
-    // componentDidMount() {
-    //     fetch(`/companies/${this.props.routerInfo.match.params.id}`)
-    //         .then(resp => resp.json())
-    //         .then(company => this.setState({ company }))
-    // }
-
-    // fetch based on id in params
-    //change state to render that company
+    componentDidMount() {
+        fetch(`/companies/${this.props.routerInfo.match.params.id}`)
+            .then(resp => resp.json())
+            .then(company => this.setState({ company }))
+    }
 
     render() {
-        // console.log("props",this.props)
-        const { company } = this.props;
-        // debugger
+        // console.log(this.props.routerInfo.match.params.id)
+        // console.log(this.state.company)
+
+        const company = this.state.company;
+        // let companyFiltered = company.find(company => company.id === parseInt(company.routerInfo.match.params.id))
+
         return (
             <div>
                 <h2>{company.name}</h2>

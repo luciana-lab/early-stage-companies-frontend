@@ -19,9 +19,6 @@ export function addCompany(company) {
             body: JSON.stringify(company)
         })
             .then(resp => resp.json())
-            .then(data => {
-                // console.log(data)
-                dispatch({ type: ADD_COMPANY, payload: data })
-            })
+            .then(data => dispatch({ type: ADD_COMPANY, payload: data }))
     }
 }

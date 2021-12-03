@@ -5,7 +5,7 @@ import Registration from "./users/Registration";
 import CompanyForm from "./companies/CompanyForm";
 import Company from "./companies/Company";
 
-function Pages({ companies }) {
+function Pages() {
     return (
         <div>
             <h1>Hello</h1>
@@ -13,7 +13,8 @@ function Pages({ companies }) {
                 <Route path="/signup" component={routerProps => <Registration routerProps={routerProps} />} />
                 <Route exact path="/companies"><CompaniesContainer /></Route>
                 <Route exact path="/companies/new" component={routerProps => <CompanyForm routerProps={routerProps} />} />
-                <Route exact path="/companies/:id" component={routerProps => <Company routerInfo={routerProps} companies={companies} />} />
+                <Route exact path="/companies/:id" component={routerProps => <Company routerInfo={routerProps} />} />
+                {/* <Route exact path="/companies/:id"><Company /></Route> */}
             </Switch>
         </div>
     )
