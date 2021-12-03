@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { removeCompany } from '../../actions/companiesActions';
 import { connect } from 'react-redux';
-import ContributionForm from './contributions/ContributionForm';
-// import { render } from '@testing-library/react';
+// import ContributionForm from './contributions/ContributionForm';
+import ContributionContainer from '../../containers/ContributionsContainer';
 
 class Company extends Component {
     constructor(props) {
@@ -29,7 +29,7 @@ class Company extends Component {
 
     displayContributionForm = () => {
         if (this.state.contributionClicked === true) {
-            return <ContributionForm company={this.company} />
+            return <ContributionContainer company={this.company} />
         }
     }
 

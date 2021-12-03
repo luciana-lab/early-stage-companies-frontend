@@ -78,7 +78,6 @@ class CompanyForm extends Component {
                         <option value="Admin">Admin</option>
                         <option value="Finance">Finance</option>
                         <option value="Networking">Networking</option>
-                        <option value="Marketing">Marketing</option>
                         <option value="Mentoring">Mentoring</option>
                         <option value="Sales">Sales</option>
                         <option value="Technology">Technology</option>
