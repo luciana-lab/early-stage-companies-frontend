@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { removeCompany } from '../../actions/companiesActions';
 import { connect } from 'react-redux';
-// import ContributionForm from './contributions/ContributionForm';
-import ContributionContainer from '../../containers/ContributionsContainer';
+// import ContributionsContainer from '../../containers/ContributionsContainer';
+import ContributionForm from './contributions/ContributionForm';
+// import Contributions from './contributions/Contributions';
 
 class Company extends Component {
     constructor(props) {
@@ -27,9 +28,13 @@ class Company extends Component {
         this.setState({ contributionClicked: true })
     }
 
+    // displayContributions = () => {
+    //     return <Contributions company={this.company} />
+    // }
+
     displayContributionForm = () => {
         if (this.state.contributionClicked === true) {
-            return <ContributionContainer company={this.company} />
+            return <ContributionForm company={this.company} />
         }
     }
 
@@ -53,15 +58,20 @@ class Company extends Component {
                 <p>{this.company && this.company.user.about}</p>
                 <p>{this.company && this.company.user.image}</p>
                 <br />
+                <h3>Contributions</h3>
                 {this.company && this.company.contributions.map(contribution => {
                     return (
                         <div key={contribution.id}>
+                            <p>{contribution.user}</p>
                             <p>{contribution.content}</p>
                         </div>
                     )
                 })}
+                {/* <Contributions company={this.company && this.company} /> */}
+                {/* {this.displayContributions()} */}
                 <button onClick={this.handleAddContribution}>Add a contribution</button>
                 {this.displayContributionForm()}
+                {/* <ContributionsContainer company={this.company} /> */}
             </div>
         )
     }

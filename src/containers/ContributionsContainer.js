@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ContributionForm from '../components/companies/contributions/ContributionForm';
+import Contributions from '../components/companies/contributions/Contributions';
+import { connect } from 'react-redux';
 
-const ContributionsContainer = ({ company }) => {
-    return (
-        <div>
-            <ContributionForm company={company} />
-            {/* <ContributionForm company={company} /> */}
-        </div>
-    )
+class ContributionsContainer extends Component {
+    render() {
+        return (
+            <div>
+                <ContributionForm company={company} />
+                <Contributions companyId={company.id} />
+            </div>
+        )
+    }
 }
 
-export default ContributionsContainer;
+const mapStateToProps = state => {
+    return {
+        contributions: state.contributions
+    }
+}
+
+export default connect(mapStateToProps)(ContributionsContainer);
