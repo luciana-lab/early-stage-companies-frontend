@@ -2,25 +2,23 @@ import React, { Component } from 'react';
 
 class Contributions extends Component {
     render() {
-        const associatedContributions = company.filter()
+        const associatedContributions = this.props.contributions.filter(contribution => contribution.companyId === this.props.companyId)
+
+        const contributionsList = associatedContributions.map(contribution => {
+            return (
+                <div key={contribution.id}>
+                    <p>{contribution.user.first_name}</p>
+                    <p>{contribution.content}</p>
+                </div>
+            )
+        })
         // debugger
         return (
             <div>
-                {this.props.company.contributions.map(contribution => {
-                    return (
-                        <div key={contribution.id}>
-                            {/* <p>{contribution.user}</p> */}
-                            <p>{contribution.content}</p>
-                        </div>
-                    )
-                })}
+                {contributionsList}
             </div>
         )
     }
-
-    // const renderContributions = () => {
-    //     console.log(company)
-    // }
 
 }
 

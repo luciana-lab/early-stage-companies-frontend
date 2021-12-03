@@ -5,7 +5,6 @@ import { addContribution } from '../../../actions/contributionsActions';
 class ContributionForm extends Component {
     state = {
         content: "",
-        // companyId: this.props.company.id
     }
 
     handleChange = e => {
@@ -13,10 +12,8 @@ class ContributionForm extends Component {
     }
 
     handleSubmit = e => {
-        // debugger
         e.preventDefault()
-        this.props.dispatchAddContribution(this.state)
-        // this.props.dispatchAddContribution({ ...this.state, companyId: this.props.company.id })
+        this.props.dispatchAddContribution({ ...this.state, company_id: this.props.companyId })
     }
 
     render() {

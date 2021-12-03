@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ContributionForm from '../components/companies/contributions/ContributionForm';
+// import ContributionForm from '../components/companies/contributions/ContributionForm';
 import Contributions from '../components/companies/contributions/Contributions';
 import { connect } from 'react-redux';
 import { fetchContributions } from './../actions/contributionsActions';
@@ -12,8 +12,8 @@ class ContributionsContainer extends Component {
     render() {
         return (
             <div>
-                <ContributionForm company={company} />
-                <Contributions contributions={this.props.contributions} companyId={company.id} />
+                {/* <ContributionForm companyId={this.props.company.id} /> */}
+                <Contributions contributions={this.props.contributions} companyId={this.props.company.id} />
             </div>
         )
     }

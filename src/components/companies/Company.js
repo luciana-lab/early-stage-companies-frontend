@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { removeCompany } from '../../actions/companiesActions';
 import { connect } from 'react-redux';
-// import ContributionsContainer from '../../containers/ContributionsContainer';
 import ContributionForm from './contributions/ContributionForm';
+import ContributionsContainer from '../../containers/ContributionsContainer';
 // import Contributions from './contributions/Contributions';
+import { Link } from 'react-router-dom';
 
 class Company extends Component {
     constructor(props) {
@@ -29,12 +30,12 @@ class Company extends Component {
     }
 
     // displayContributions = () => {
-    //     return <Contributions company={this.company} />
+    //     return <ContributionsContainer company={this.company} />
     // }
 
     displayContributionForm = () => {
         if (this.state.contributionClicked === true) {
-            return <ContributionForm company={this.company} />
+            return <ContributionForm companyId={this.company.id} />
         }
     }
 
@@ -59,15 +60,17 @@ class Company extends Component {
                 <p>{this.company && this.company.user.image}</p>
                 <br />
                 <h3>Contributions</h3>
-                {this.company && this.company.contributions.map(contribution => {
+                {/* {this.company && this.company.contributions.map(contribution => {
                     return (
                         <div key={contribution.id}>
-                            <p>{contribution.user}</p>
-                            <p>{contribution.content}</p>
+                            <Link to={`/users/${contribution.user_id}`}>
+                                <p>{contribution.user}</p>
+                                <p>{contribution.content}</p>
+                            </Link>
                         </div>
                     )
-                })}
-                {/* <Contributions company={this.company && this.company} /> */}
+                })} */}
+                <ContributionsContainer company={this.company && this.company} />
                 {/* {this.displayContributions()} */}
                 <button onClick={this.handleAddContribution}>Add a contribution</button>
                 {this.displayContributionForm()}
