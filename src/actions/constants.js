@@ -7,3 +7,4 @@ export const GET_CONTRIBUTIONS = "GET_CONTRIBUTIONS";
 export const ADD_CONTRIBUTION = "ADD_CONTRIBUTION";
 
 export const ADD_USER = "ADD_USER";
+export const GET_USER = "GET_USER";

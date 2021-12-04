@@ -23,7 +23,7 @@ class Logout extends Component {
     render() {
         return (
             <div>
-                <Login handleSuccessfulAuth={this.handleSuccessfulAuth} />
+                <Login handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} />
                 <UserForm handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} />
                 <button onClick={this.handleLogoutClick}>Logout</button>
             </div>
