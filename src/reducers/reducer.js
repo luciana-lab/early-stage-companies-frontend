@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS } from '../actions/constants';
+import { ADD_USER, ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS } from '../actions/constants';
 
 const rootReducer = combineReducers({
     users: usersReducer,
@@ -12,6 +12,8 @@ export default rootReducer;
 
 function usersReducer(state = [], action) {
     switch (action.type) {
+        case ADD_USER:
+            return [...state, action.payload]
 
         default:
             return state
