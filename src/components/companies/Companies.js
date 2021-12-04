@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Companies = ({ companies }) => {
+    // console.log(companies)
     return (
         <div>
             {companies.map(company => {
