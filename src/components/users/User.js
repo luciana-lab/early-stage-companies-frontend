@@ -12,6 +12,12 @@ const User = ({ companies, routerProps }) => {
         })
     })
 
+    companies.filter(company => {
+        if (company.user.id === filter) {
+            return userFound = company.user
+        }
+    })
+
     return (
         <div>
             <p>{userFound && userFound.first_name}</p>
