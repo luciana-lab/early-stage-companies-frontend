@@ -1,10 +1,24 @@
 import React from "react";
 
-const User = (props) => {
-    console.log(props)
+const User = ({ companies, routerProps }) => {
+    const filter = parseInt(routerProps.match.params.id)
+    let userFound
+
+    companies.filter(company => {
+        return company.contributions.find(contribution => {
+            if (contribution.user.id === filter) {
+                return userFound = contribution.user
+            }
+        })
+    })
+
     return (
         <div>
-
+            <p>{userFound && userFound.first_name}</p>
+            <p>{userFound && userFound.last_name}</p>
+            <p>{userFound && userFound.image}</p>
+            <p>{userFound && userFound.email}</p>
+            <p>{userFound && userFound.about}</p>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeCompany } from '../../actions/companiesActions';
 import ContributionForm from './contributions/ContributionForm';
+import { Link } from 'react-router-dom';
 
 class Company extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class Company extends Component {
         // console.log(this.props.companies)
         // console.log(this.props.routerProps.match.params.id)
         this.company = this.props.companies.find(company => company.id === parseInt(this.props.routerProps.match.params.id))
-        console.log(this.company.contributions)
+        // console.log(this.company.contributions)
 
         this.state = {
             contributionBtn: false
@@ -54,7 +55,9 @@ class Company extends Component {
                 {this.company && this.company.contributions.map(contribution => {
                     return (
                         <div key={contribution.id}>
-                            <p>{contribution.user.first_name}</p>
+                            <Link to={`/users/${contribution.user.id}`}>
+                                <p>{contribution.user.first_name}</p>
+                            </Link>
                             <p>{contribution.content}</p>
                         </div>
                     )

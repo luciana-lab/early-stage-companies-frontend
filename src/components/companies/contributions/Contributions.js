@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//TODO delete this component, not being used.
 class Contributions extends Component {
     render() {
         const associatedContributions = this.props.contributions.filter(contribution => contribution.companyId === this.props.companyId)

@@ -4,6 +4,8 @@ import Contributions from '../components/companies/contributions/Contributions';
 import { connect } from 'react-redux';
 import { fetchContributions } from './../actions/contributionsActions';
 
+
+//TODO delete this component, not being used.
 class ContributionsContainer extends Component {
     componentDidMount() {
         this.props.fetchContributions()
