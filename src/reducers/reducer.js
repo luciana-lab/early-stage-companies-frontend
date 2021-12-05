@@ -16,10 +16,13 @@ function usersReducer(state = {}, action) {
             return [...state, action.payload, { loggedInStatus: true }]
 
         case LOGIN:
-            return action.payload, { loggedInStatus: true }
+            return [action.payload, { loggedInStatus: true }]
 
         case LOGOUT:
             return { state: {}, loggedInStatus: false }
+
+        case "LOGGEDIN_STATUS":
+            return action.payload
 
         default:
             return state

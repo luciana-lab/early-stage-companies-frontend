@@ -73,20 +73,15 @@ export function logout() {
 export function loginStatus() {
     return dispatch => {
         fetch("/logged_in", { withCredentials: true })
-            .then(resp => {
-                // console.log("logged in?", resp)
-                if (resp.ok) {
-                    return resp.json()
-                } else {
-                    throw new Error()
-                }
-            })
+            .then(resp => resp.json())
             .then(data => {
                 console.log("data?", data)
+                // console.log("data status", data.logged_in)
+                // console.log(this.state)
                 if (data.logged_in) {
                     // this.setState({ user: data.user })
                     dispatch({ type: LOGIN, payload: data })
-                } else if (!data.logged_in) {
+                } else {
                     // this.setState({ user: {} })
                     dispatch({ type: LOGOUT, payload: data })
                 }

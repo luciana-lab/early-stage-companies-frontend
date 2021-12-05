@@ -18,9 +18,11 @@ class Login extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        console.log(this.state)
+        // console.log(this.props)
+        console.log("from login", this.state)
         this.props.dispatchLogin(this.state)
-        // this.props.handleSuccessfulAuth(this.state)
+        this.props.handleSuccessfulAuth(this.state)
+
         this.props.routerProps.history.push("/")
         // this.props.fetchLogin(this.state)
     }
@@ -42,6 +44,12 @@ class Login extends Component {
         )
     }
 }
+
+// const mapStateToProps = state => {
+//     return {
+//         user: state.user
+//     }
+// }
 
 const mapDispatchToProps = dispatch => {
     return {

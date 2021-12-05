@@ -23,7 +23,7 @@ class Signup extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.dispatchSignup(this.state)
-        // this.props.handleSuccessfulAuth(this.state)
+        this.props.handleSuccessfulAuth(this.state)
         this.props.routerProps.history.push("/")
         // this.props.fetchSignup(this.state)
     }

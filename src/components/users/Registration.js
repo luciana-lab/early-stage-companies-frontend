@@ -4,19 +4,36 @@ import { loginStatus } from "../../actions/usersActions";
 import Signup from "./Signup";
 import Login from "./Login";
 import Logout from "./Logout";
+import Pages from "../Pages";
 
 class Registration extends Component {
+    state = {
+        loggedInStatus: ""
+    }
 
-    componentDidMount() {
+    componentDidMount = () => {
+        // console.log("login status mount", this.props)
+        // console.log("login status mount", data)
+        // console.log("dispatch", this.props.dispatchLoginStatus())
         this.props.dispatchLoginStatus()
+        // this.handleSuccessfulAuth(data)
+    }
+
+    handleSuccessfulAuth = data => {
+        console.log("this.state before", this.state)
+        console.log("handle successful auth", data)
+        // this.setState({ loggedInStatus: data.loggedInStatus })
+        this.props.dispatchGetStatus(this.state)
+        console.log("this.state after", this.state)
     }
 
     render() {
         return (
             <div>
-                <Login routerProps={this.props.routerProps} userStatus={this.props.user} />
-                <Signup routerProps={this.props.routerProps} userStatus={this.props.user} />
-                <Logout routerProps={this.props.routerProps} userStatus={this.props.user} />
+                <Login componentDidMount={this.componentDidMount} handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} />
+                <Signup handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} />
+                <Logout handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} />
+                {/* <Pages loggedInStatus={this.state.loggedInStatus} /> */}
             </div>
         )
     }
@@ -30,10 +47,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-    // dispatchSigup: user => dispatch(signup(user)),
-    // dispatchLogin: user => dispatch(login(user)),
-    // dispatchLogout: () => dispatch(logout()),
-    dispatchLoginStatus: () => dispatch(loginStatus())
+    dispatchLoginStatus: () => dispatch(loginStatus()),
+    dispatchGetStatus: payload => dispatch({ type: "LOGGEDIN_STATUS", payload })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Registration);

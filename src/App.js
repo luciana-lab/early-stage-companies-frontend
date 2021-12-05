@@ -7,7 +7,6 @@ import CompanyContainer from './containers/CompaniesContainer'
 function App() {
   return (
     <div className="App">
-      Hello
       <Navbar />
       <CompanyContainer />
       {/* <Pages /> */}

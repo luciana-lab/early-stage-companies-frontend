@@ -9,8 +9,10 @@ class Logout extends Component {
     }
 
     handleLogoutClick = () => {
-        console.log(this.state)
+        // console.log(this.props)
+        console.log("from logout", this.state)
         this.props.logout(this.state)
+        this.props.handleSuccessfulAuth(this.state)
     }
 
     render() {
