@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { login } from '../../actions/usersActions';
 import { connect } from 'react-redux';
-import { getUser } from '../../actions/sessionsActions';
 
 class Login extends Component {
     state = {
         email: "",
         password: "",
+        loggedInStatus: "LOGGED_IN",
         loginErrors: ""
     }
 
@@ -17,12 +18,15 @@ class Login extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.dispatchGetUser(this.state)
-        this.props.handleSuccessfulAuth(this.state)
+        console.log(this.state)
+        this.props.dispatchLogin(this.state)
+        // this.props.handleSuccessfulAuth(this.state)
         this.props.routerProps.history.push("/")
+        // this.props.fetchLogin(this.state)
     }
 
     render() {
+        // console.log(this.props)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -41,10 +45,9 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        dispatchGetUser: user => dispatch(getUser(user))
+        dispatchLogin: user => dispatch(login(user))
     }
 }
-
 
 export default connect(null, mapDispatchToProps)(Login);
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addUser } from '../../actions/usersActions';
+import { signup } from '../../actions/usersActions';
 
-class UserForm extends Component {
+class Signup extends Component {
     state = {
         first_name: "",
         last_name: "",
@@ -10,6 +10,7 @@ class UserForm extends Component {
         password: "",
         about: "",
         image: "",
+        loggedInStatus: "LOGGED_IN",
         registrationErrors: ""
     }
 
@@ -21,9 +22,10 @@ class UserForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.dispatchAddUser(this.state)
-        this.props.handleSuccessfulAuth(this.state)
+        this.props.dispatchSignup(this.state)
+        // this.props.handleSuccessfulAuth(this.state)
         this.props.routerProps.history.push("/")
+        // this.props.fetchSignup(this.state)
     }
 
     render() {
@@ -57,21 +59,19 @@ class UserForm extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        dispatchAddUser: user => dispatch(addUser(user))
+        dispatchSignup: user => dispatch(signup(user))
     }
 }
 
-export default connect(null, mapDispatchToProps)(UserForm);
-
-
-
+export default connect(null, mapDispatchToProps)(Signup);
 
 /*
-class UserForm extends Component {
-    constructor(props) {
-        super(props)
 
-        this.state = {
+        erForm extends Component {
+        tructor(props) {
+            r(props)
+
+            .state = {
             first_name: "",
             last_name: "",
             email: "",
@@ -80,24 +80,24 @@ class UserForm extends Component {
             image: "",
             registrationErrors: ""
         }
-    }
 
-    handleChange = e => {
-        this.setState({
+
+            ange = e => {
+            .setState({
             [e.target.name]: e.target.value
         })
-    }
 
-    handleSubmit = e => {
-        console.log(this.state.password)
-        fetch("/users", {
-            method: "POST",
-            headers: {
+
+            bmit = e => {
+            ole.log(this.state.password)
+                users", {
+                od: "POST",
+                ers: {
                 "Access-Control-Allow-Origins": "*",
                 "Content-Type": "application/json",
                 Accept: "application/json"
-            },
-            body: JSON.stringify({
+
+                : JSON.stringify({
                 first_name: this.state.first_name,
                 last_name: this.state.last_name,
                 email: this.state.email,
@@ -105,27 +105,27 @@ class UserForm extends Component {
                 about: this.state.about,
                 image: this.state.image
             })
-        },
+
             { withCredentials: true }
-        )
-            .then(resp => resp.json())
-            .then(data => {
-                // debugger
-                console.log("user created?", data)
-                if (data.status === "created") {
+
+                n(resp => resp.json())
+                n(data => {
+                    ebugger
+                    ole.log("user created?", data)
+                    data.status === "created") {
                     this.props.handleSuccessfulAuth(data.user)
                 }
-            }).catch(error => {
+                atch(error => {
                 console.log("registration error", error)
             })
 
         e.preventDefault()
-    }
 
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
+
+
+
+
+                    m onSubmit={this.handleSubmit}>
                     <label>First Name</label>
                     <input type="text" name="first_name" value={this.state.first_name} onChange={this.handleChange} required />
 
@@ -144,7 +144,7 @@ class UserForm extends Component {
                     <label>Image</label>
                     <input type="text" name="image" value={this.state.image} onChange={this.handleChange} />
 
-                    <input type="submit" value="Create Account" />
+                                "submit" value="Create Account" />
                 </form>
             </div>
         )

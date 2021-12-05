@@ -1,8 +1,61 @@
 import React, { Component } from 'react';
-import Login from '../sessions/Login';
-import UserForm from './UserForm';
-// import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { logout } from '../../actions/usersActions';
 
+class Logout extends Component {
+    state = {
+        loggedInStatus: "NOT_LOGGED_IN",
+        user: {}
+    }
+
+    handleLogoutClick = () => {
+        console.log(this.state)
+        this.props.logout(this.state)
+    }
+
+    render() {
+        // console.log(this.props)
+        return (
+            <div>
+                <button onClick={this.handleLogoutClick}>Logout</button>
+            </div>
+        )
+    }
+}
+
+// mapDispatchToProps
+
+export default connect(null, { logout })(Logout);
+
+/*
+class Logout extends Component {
+    handleSuccessfulAuth = data => {
+        this.props.handleLogin(data)
+        this.props.routerProps.history.push("/")
+        // return <Redirect to="/companies" />
+    }
+
+    handleLogoutClick = () => {
+        // console.log(this.props.currentUser.id)
+        logoutUser()
+        this.props.handleLogout(this.props.currentUser.id)
+    }
+
+    render() {
+        return (
+            <div>
+                <Login handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} />
+                <Signup handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} />
+                <button onClick={this.handleLogoutClick}>Logout</button>
+            </div>
+        )
+    }
+}
+
+export default connect(null, { logoutUser })(Logout);
+*/
+
+/*
 class Logout extends Component {
     handleSuccessfulAuth = data => {
         this.props.handleLogin(data)
@@ -32,3 +85,5 @@ class Logout extends Component {
 }
 
 export default Logout;
+
+*/

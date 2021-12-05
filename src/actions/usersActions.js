@@ -1,6 +1,6 @@
-import { ADD_USER } from "./constants";
+import { SIGNUP, LOGIN, LOGOUT } from "./constants";
 
-export function addUser(user) {
+export function signup(user) {
     return dispatch => {
         fetch("/users", {
             method: "POST",
@@ -18,9 +18,81 @@ export function addUser(user) {
                 // console.log("user created?", data)
                 if (data.status === "created") {
                     // this.props.handleSuccessfulAuth(data.user)
-                    dispatch({ type: ADD_USER, payload: data })
+                    dispatch({ type: SIGNUP, payload: data })
                 }
             })
             .catch(error => console.log("registration error", error))
+    }
+}
+
+export function login(user) {
+    return dispatch => {
+        fetch("/sessions", {
+            method: "POST",
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(user)
+        },
+            { withCredentials: true }
+        )
+            .then(resp => resp.json())
+            .then(data => {
+                // debugger
+                // console.log(data)
+                if (data.logged_in) {
+                    // console.log(data)
+                    // this.props.handleSuccessfulAuth(data.user)
+                    dispatch({ type: LOGIN, payload: data })
+                } else {
+                    throw new Error()
+                }
+            }).catch(error => console.log("login error", error))
+    }
+}
+
+export function logout() {
+    return dispatch => {
+        fetch("/logout", {
+            method: "DELETE"
+        }, { withCredentials: true })
+            .then(resp => resp.json())
+            // .then(data => console.log(data))
+            .then(data => {
+                if (!data.logged_in) {
+                    // this.props.handleLogout(data)
+                    dispatch({ type: LOGOUT, payload: data })
+                }
+            })
+            .catch(error => console.log("logout error", error))
+    }
+}
+
+export function loginStatus() {
+    return dispatch => {
+        fetch("/logged_in", { withCredentials: true })
+            .then(resp => {
+                // console.log("logged in?", resp)
+                if (resp.ok) {
+                    return resp.json()
+                } else {
+                    throw new Error()
+                }
+            })
+            .then(data => {
+                console.log("data?", data)
+                if (data.logged_in) {
+                    // this.setState({ user: data.user })
+                    dispatch({ type: LOGIN, payload: data })
+                } else if (!data.logged_in) {
+                    // this.setState({ user: {} })
+                    dispatch({ type: LOGOUT, payload: data })
+                }
+            })
+            .catch(error => {
+                console.log("check login error", error)
+            })
     }
 }

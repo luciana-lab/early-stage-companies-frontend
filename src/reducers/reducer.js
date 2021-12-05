@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
 
-import { ADD_USER, ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS, GET_USER } from '../actions/constants';
+import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS, SIGNUP, LOGIN, LOGOUT } from '../actions/constants';
 
 const rootReducer = combineReducers({
-    sessions: sessionsReducer,
     users: usersReducer,
     companies: companiesReducer,
     contributions: contributionsReducer
@@ -11,20 +10,16 @@ const rootReducer = combineReducers({
 
 export default rootReducer;
 
-function usersReducer(state = [], action) {
+function usersReducer(state = {}, action) {
     switch (action.type) {
-        case ADD_USER:
-            return [...state, action.payload]
+        case SIGNUP:
+            return [...state, action.payload, { loggedInStatus: true }]
 
-        default:
-            return state
-    }
-}
+        case LOGIN:
+            return action.payload, { loggedInStatus: true }
 
-function sessionsReducer(state = [], action) {
-    switch (action.type) {
-        case GET_USER:
-            return action.payload
+        case LOGOUT:
+            return { state: {}, loggedInStatus: false }
 
         default:
             return state

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class Company extends Component {
     constructor(props) {
         super(props)
-        // console.log(this.props.companies)
+        // console.log(this.props)
         // console.log(this.props.routerProps.match.params.id)
         this.company = this.props.companies.find(company => company.id === parseInt(this.props.routerProps.match.params.id))
         // console.log(this.company.contributions)
@@ -22,7 +22,7 @@ class Company extends Component {
     }
 
     handleDeleteCompany = () => {
-        removeCompany(this.company.id)
+        this.props.removeCompany(this.company.id)
         this.props.routerProps.history.push("/companies")
     }
 

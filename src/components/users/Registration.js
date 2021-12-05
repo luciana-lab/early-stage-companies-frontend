@@ -1,6 +1,44 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { loginStatus } from "../../actions/usersActions";
+import Signup from "./Signup";
+import Login from "./Login";
 import Logout from "./Logout";
 
+class Registration extends Component {
+
+    componentDidMount() {
+        this.props.dispatchLoginStatus()
+    }
+
+    render() {
+        return (
+            <div>
+                <Login routerProps={this.props.routerProps} userStatus={this.props.user} />
+                <Signup routerProps={this.props.routerProps} userStatus={this.props.user} />
+                <Logout routerProps={this.props.routerProps} userStatus={this.props.user} />
+            </div>
+        )
+    }
+
+}
+
+const mapStateToProps = state => {
+    return {
+        user: state.user
+    }
+}
+
+const mapDispatchToProps = dispatch => ({
+    // dispatchSigup: user => dispatch(signup(user)),
+    // dispatchLogin: user => dispatch(login(user)),
+    // dispatchLogout: () => dispatch(logout()),
+    dispatchLoginStatus: () => dispatch(loginStatus())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Registration);
+
+/*
 class Registration extends Component {
     state = {
         user: {}
@@ -44,11 +82,14 @@ class Registration extends Component {
     render() {
         return (
             <div>
-                <Logout handleLogin={this.handleLogin} handleLogout={this.handleLogout} routerProps={this.props.routerProps} />
+                <Logout currentUser={this.state.user} handleLogin={this.handleLogin} handleLogout={this.handleLogout} routerProps={this.props.routerProps} />
             </div>
         )
     }
 
 }
 
+
+
 export default Registration;
+*/
