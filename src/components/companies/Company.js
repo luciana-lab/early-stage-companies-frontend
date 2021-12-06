@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeCompany } from '../../actions/companiesActions';
-import ContributionForm from './contributions/ContributionForm';
+import ContributionForm from '../contributions/ContributionForm';
 import { Link } from 'react-router-dom';
 import '../../style/Company.css';
 // import { Player } from 'video-react';

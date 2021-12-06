@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+}
+
+/* Create three equal columns that floats next to each other */
+.company-column-right,
+.company-column-left {
+    float: left;
+    width: 50%;
+    padding: 15px;
+    text-align: justify;
+}
+
+.company-column-right {
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+/* .individual-company-card { */
+    /* background-color: white;
+    padding: 10px;
+    margin-top: 10px; */
+/* } */
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+  
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+    .leftcolumn,
+    .rightcolumn {
+      width: 50%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .leftcolumn,
+    .rightcolumn {
+      width: 100%;
+    }
+}
+
+#companies-info img,
+#companies-info p {
+    display: inline;
+}
+
+#companies-info p {
+    text-align: center;
+    padding: 5%;
+}
+
+.individual-company-card p {
+    color: black;
+}
+
+.company-column-right h3, p {
+    color: black;
+}

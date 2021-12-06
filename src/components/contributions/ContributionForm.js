@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addContribution } from '../../../actions/contributionsActions';
+import { addContribution } from '../../actions/contributionsActions';
+import '../../style/ContributionForm.css';
 
 class ContributionForm extends Component {
     state = {
@@ -18,11 +19,10 @@ class ContributionForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="contribution-form">
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="contribution-content-textarea">Contribuition</label>
-                    <textarea name="content" id="contribution-content-textarea" value={this.state.content} onChange={this.handleChange} />
-                    <input type="submit" value="Submit" />
+                    <textarea name="content" id="contribution-form-textarea" value={this.state.content} onChange={this.handleChange} />
+                    <input type="submit" id="contribution-form-btn" value="Submit" />
                 </form>
             </div>
         )

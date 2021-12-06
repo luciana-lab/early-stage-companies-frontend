@@ -1,0 +1,25 @@
+.contribution-form {
+    text-align: center;
+}
+.contribution-form #contribution-form-textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #fe5e1d;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    background-color: rgb(50, 145, 50);
+    color: white;
+    text-decoration: none;
+    letter-spacing: .02rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+}
