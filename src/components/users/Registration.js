@@ -4,7 +4,7 @@ import { loginStatus } from "../../actions/usersActions";
 import Signup from "./Signup";
 import Login from "./Login";
 import Logout from "./Logout";
-import Pages from "../Pages";
+// import Pages from "../Pages";
 
 class Registration extends Component {
     state = {

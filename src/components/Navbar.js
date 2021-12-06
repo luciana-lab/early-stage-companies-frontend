@@ -7,7 +7,7 @@ function Navbar() {
     return (
         <nav>
             <ul>
-                <li><div id="logo"><img src={logo} className="img-responsive main-image" /></div></li>
+                <li><div id="logo"><img src={logo} className="img-responsive main-image" alt="logo" /></div></li>
                 <li><NavLink exact to="/">HOME</NavLink></li>
                 <li><NavLink exact to="/companies">PROJECTS</NavLink></li>
                 <li><NavLink exact to="/companies/new">START A PROJECT</NavLink></li>

@@ -11,7 +11,6 @@ function Pages({ companies }) {
     // console.log(loggedInStatus)
     return (
         <div>
-            <h1>Hello</h1>
             <Switch>
                 <Route exact path="/signup" component={routerProps => <Registration routerProps={routerProps} />} />
                 <Route exact path="/companies" component={routerProps => <Companies companies={companies} routerInfo={routerProps} />} />

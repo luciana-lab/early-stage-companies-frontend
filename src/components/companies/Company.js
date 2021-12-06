@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { removeCompany } from '../../actions/companiesActions';
 import ContributionForm from './contributions/ContributionForm';
 import { Link } from 'react-router-dom';
+import '../../style/Company.css';
 
 class Company extends Component {
     constructor(props) {
@@ -38,34 +39,51 @@ class Company extends Component {
 
     render() {
         return (
-            <div key={this.company && this.company.id}>
-                <h3>{this.company && this.company.name}</h3>
-                <p>{this.company && this.company.video}</p>
-                <p>{this.company && this.company.industry}</p>
-                <p>{this.company && this.company.description}</p>
-                <p>{this.company && this.company.image}</p>
-                <p>{this.company && this.company.website}</p>
-                <p>{this.company && this.company.need_category}</p>
-                <p>{this.company && this.company.need}</p>
-                <br />
-
-                <button onClick={this.handleEditCompany}>Edit Company</button>
-                <button onClick={this.handleDeleteCompany}>Delete Company</button>
-
-                {this.company && this.company.contributions.map(contribution => {
-                    return (
-                        <div key={contribution.id}>
-                            <Link to={`/users/${contribution.user.id}`}>
-                                <p>{contribution.user.first_name}</p>
+            <div className="row">
+                <div className="leftcolumn">
+                    <div className="card">
+                        <div key={this.company && this.company.id}>
+                            <Link to={{ pathname: `${this.company && this.company.website}` }} target="_blank">
+                                <h3>{this.company && this.company.name}</h3>
                             </Link>
-                            <p>{contribution.content}</p>
+                            <video width="400" controls>
+                                <source src={`${this.company && this.company.video}`} />
+                            </video>
+                            <p>{this.company && this.company.industry}</p>
+                            <p>{this.company && this.company.description}</p>
+                            {/* <img src={`${this.company && this.company.image}`} alt="company image" /> */}
+                            <button onClick={this.handleEditCompany}>Edit Company</button>
+                            <button onClick={this.handleDeleteCompany}>Delete Company</button>
                         </div>
-                    )
-                })}
-                <br />
-
-                <button onClick={this.handleContributionClick}>Add Contribution</button>
-                {this.contributionForm()}
+                    </div>
+                </div>
+                <div className="rightcolumn">
+                    <div className="card">
+                        <p>{this.company && this.company.need_category}</p>
+                        <p>{this.company && this.company.need}</p>
+                        <p>{this.company && this.company.contributions.length}</p>
+                        <button onClick={this.handleContributionClick}>Add Contribution</button>
+                        {this.contributionForm()}
+                    </div>
+                    <div className="card">
+                        <div className="userimg" src={this.company && this.company.user.image}></div>
+                        <img src={`${this.company && this.company.user.image}`} alt="user image" style={{ height: 100 + "px" }} />
+                        <h4>{this.company && this.company.user.first_name}</h4>
+                        <p>{this.company && this.company.user.about}</p>
+                    </div>
+                    <div className="card">
+                        {this.company && this.company.contributions.map(contribution => {
+                            return (
+                                <div key={contribution.id}>
+                                    <Link to={`/users/${contribution.user.id}`}>
+                                        <p>{contribution.user.first_name}</p>
+                                    </Link>
+                                    <p>{contribution.content}</p>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
         )
     }
