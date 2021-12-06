@@ -10,37 +10,41 @@ const Companies = ({ companies }) => {
                 {companies.map((company, i) => {
                     if (i === companies.length - 1) {
                         return (
+
                             <div className="company-column-right" key={company.id}>
+                                <h4>FRESH FAVORITE</h4>
                                 <Link to={`/companies/${company.id}`} style={{ textDecoration: 'none' }}>
-                                    <h3>{company.name}</h3>
                                     <img src={company.image} alt="company image" style={{ height: 400 + "px" }} />
-                                    <p>Industry: {company.industry}</p>
-                                    <p>Help Category: {company.need_category}</p>
+                                    <h3 id="feature-company">{company.name}</h3>
+                                    <p id="feature-industry">Industry: {company.industry}</p>
+                                    <p id="feature-help-category">Help in {company.need_category}</p>
                                 </Link>
                             </div>
                         )
                     }
                 })}
-                {companies.map((company, i) => {
-                    if (i !== companies.length - 1) {
-                        return (
-                            <div className="company-column-left" key={company.id}>
-                                <Link to={`/companies/${company.id}`} style={{ textDecoration: 'none' }}>
-                                    <div className="individual-company-card">
-                                        <p><b>{company.name}</b></p>
-                                        <div id="companies-info">
-                                            <img src={company.image} alt="company image" style={{ height: 100 + "px" }} />
-                                            <p>Industry: {company.industry}</p>
-                                            <p>Help Category: {company.need_category}</p>
-                                        </div>
+                <div className="company-column-left">
+                    <h4>FEATURED PROJECTS</h4>
+                    <div className="scrolling-wrapper">
+                        {companies.map((company, i) => {
+                            if (i !== companies.length - 1) {
+                                return (
+                                    <div className="individual-company-card" key={company.id}>
+                                        <Link to={`/companies/${company.id}`} style={{ textDecoration: 'none' }}>
+                                            <p id="p-company"><b>{company.name}</b></p>
+                                            <img src={company.image ? company.image : "https://corefact-marketing.s3.us-west-1.amazonaws.com/random/upload-image.png"} alt="company image" style={{ height: 100 + "px" }} />
+                                            <p id="p-industry">Industry: {company.industry}</p>
+                                            <p id="p-help-category">Help in {company.need_category}</p>
+                                        </Link>
                                     </div>
-                                </Link>
-                            </div>
-                        )
-                    }
-                })}
+                                )
+                            }
+                        })}
+                    </div>
+                </div>
             </div>
-        </div >
+        </div>
+
 
     )
 
