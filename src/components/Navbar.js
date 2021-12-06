@@ -8,10 +8,10 @@ function Navbar() {
         <nav>
             <ul>
                 <li><div id="logo"><img src={logo} className="img-responsive main-image" /></div></li>
-                <li><NavLink exact to="/">Home</NavLink></li>
-                <li><NavLink exact to="/companies">Companies</NavLink></li>
-                <li><NavLink exact to="/companies/new">Create Company</NavLink></li>
-                <li><NavLink exact to="/signup">Signup</NavLink></li>
+                <li><NavLink exact to="/">HOME</NavLink></li>
+                <li><NavLink exact to="/companies">PROJECTS</NavLink></li>
+                <li><NavLink exact to="/companies/new">START A PROJECT</NavLink></li>
+                <li><NavLink exact to="/signup">REGISTER</NavLink></li>
             </ul>
         </nav>
     )
