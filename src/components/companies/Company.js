@@ -4,6 +4,8 @@ import { removeCompany } from '../../actions/companiesActions';
 import ContributionForm from './contributions/ContributionForm';
 import { Link } from 'react-router-dom';
 import '../../style/Company.css';
+// import { Player } from 'video-react';
+// import "node_modules/video-react/dist/video-react.css";
 
 class Company extends Component {
     constructor(props) {
@@ -44,25 +46,30 @@ class Company extends Component {
                     <div className="card">
                         <div key={this.company && this.company.id}>
                             <Link to={{ pathname: `${this.company && this.company.website}` }} target="_blank">
-                                <h3>{this.company && this.company.name}</h3>
+                                <h2>{this.company && this.company.name}</h2>
                             </Link>
-                            <video width="400" controls>
-                                <source src={`${this.company && this.company.video}`} />
-                            </video>
-                            <p>{this.company && this.company.industry}</p>
-                            <p>{this.company && this.company.description}</p>
-                            {/* <img src={`${this.company && this.company.image}`} alt="company image" /> */}
-                            <button onClick={this.handleEditCompany}>Edit Company</button>
-                            <button onClick={this.handleDeleteCompany}>Delete Company</button>
+                            <div className="video-responsive">
+                                <iframe src={`${this.company && this.company.video}`} title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <p>Industry: <b>{this.company && this.company.industry}</b></p>
+                            <p style={{ whiteSpace: "pre-wrap" }}>{this.company && this.company.description}</p>
+                            <button id="company-edit-btn" onClick={this.handleEditCompany}>Edit Company</button>
+                            <button id="company-delete-btn" onClick={this.handleDeleteCompany}>Delete Company</button>
                         </div>
                     </div>
                 </div>
                 <div className="rightcolumn">
                     <div className="card">
-                        <p>{this.company && this.company.need_category}</p>
+                        <h4>Drip this project</h4>
+                        <p>Help in {this.company && this.company.need_category}</p>
                         <p>{this.company && this.company.need}</p>
-                        <p>{this.company && this.company.contributions.length}</p>
-                        <button onClick={this.handleContributionClick}>Add Contribution</button>
+                        <div id="contributions-length">
+                            <h2>{this.company && this.company.contributions.length} </h2>
+                            {this.company && this.company.contributions.length <= 1 ? <p>contribution</p> : <p>contributions</p>}
+                        </div>
+                        <div id="contributions-btn">
+                            <button onClick={this.handleContributionClick}>Give me a shot &#9749;</button>
+                        </div>
                         {this.contributionForm()}
                     </div>
                     <div className="card">
@@ -72,6 +79,7 @@ class Company extends Component {
                         <p>{this.company && this.company.user.about}</p>
                     </div>
                     <div className="card">
+                        <h4>Contributions</h4>
                         {this.company && this.company.contributions.map(contribution => {
                             return (
                                 <div key={contribution.id}>
