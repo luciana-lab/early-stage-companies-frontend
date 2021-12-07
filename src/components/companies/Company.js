@@ -87,8 +87,8 @@ class Company extends Component {
                         </div>
                         <div className="card-about-me">
                             {/* <div className="userimg" src={this.company && this.company.user.image}></div> */}
-                            <img src={`${this.company && this.company.user.image}`} alt="user profile" className="company-user-avatar" />
                             <Link to={`/users/${this.company && this.company.user.id}`}>
+                                <img src={`${this.company && this.company.user.image ? this.company.user.image : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"}`} alt="user profile" className="company-user-avatar" />
                                 <div id="company-user-owner-name">
                                     <h4>{this.company && this.company.user.first_name.toUpperCase()}</h4>
                                     <h4>{this.company && this.company.user.last_name.toUpperCase()}</h4>

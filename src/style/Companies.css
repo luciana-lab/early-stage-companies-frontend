@@ -34,12 +34,35 @@ body {
     text-align: center;
 }
 
-#p-help-category, #p-industry, #p-company {
-    font-size: 14px;
+.individual-company-card .companies-card-card {
+    position: relative;
+    margin-top: 20%;
+    margin-bottom: -80%;
+}
+
+#p-company {
+    font-size: 20px;
+    padding-bottom: 20px;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#p-help-category, #p-industry {
+    font-size: 16px;
     word-break: break-all;
     /* overflow-wrap: break-word; */
     overflow: hidden;
     text-overflow: ellipsis;
+    color: black;
+}
+
+#p-industry {
+    padding-top: 20px;
+}
+
+#companies-img {
+    height: 200px;
 }
 
 #feature-company {
@@ -48,6 +71,7 @@ body {
 
 #feature-help-category, #feature-industry {
     font-size: 16px;
+    color: black;
 }
   
 /* Clear floats after the columns */
@@ -66,12 +90,8 @@ body {
     }
 }
 
-.companies-column-right h3, p {
-    color: black;
-}
-
-.companies-column-right h4,
-.companies-column-left h4 {
+.companies-column-right h2,
+.companies-column-left h2 {
     text-align: center;
 }
 
@@ -87,7 +107,7 @@ body {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    padding-top: 7%;
+    /* padding-top: 7%; */
     
     /* .individual-company-card {
       display: inline-block;
@@ -110,12 +130,12 @@ body {
     flex: 0 0 auto;
     margin-right: 3px;
     border: 2px solid #fe5e1d;
-    width: 200px;
-    height: 250px;
+    width: 300px;
+    height: 480px;
 }
   
 .scrolling-wrapper, .scrolling-wrapper-flexbox {
-    height: 330px;
+    height: 510px;
     margin-bottom: 20px;
     width: 100%;
     -webkit-overflow-scrolling: touch;

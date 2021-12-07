@@ -11,11 +11,11 @@ const Companies = ({ companies }) => {
                         return (
                             <div className="companies-column-right" key={company.id}>
                                 <div className="companies-card-right">
-                                    <h4>FRESH FAVORITE</h4>
+                                    <h2>FRESH FAVORITE</h2>
                                     <hr />
                                     <Link to={`/companies/${company.id}`} style={{ textDecoration: 'none' }}>
                                         <img src={company.image} alt="company feature" style={{ height: 400 + "px" }} />
-                                        <h3 id="feature-company">{company.name}</h3>
+                                        <h3 id="feature-company">{company.name.toUpperCase()}</h3>
                                         <p id="feature-industry">Industry: {company.industry}</p>
                                         <p id="feature-help-category">Help in {company.need_category}</p>
                                     </Link>
@@ -26,7 +26,7 @@ const Companies = ({ companies }) => {
                 })}
                 <div className="companies-column-left">
                     <div className="companies-card-left">
-                        <h4>FEATURED PROJECTS</h4>
+                        <h2>FEATURED PROJECTS</h2>
                         <hr />
                         <div className="scrolling-wrapper">
                             {companies.map((company, i) => {
@@ -34,10 +34,12 @@ const Companies = ({ companies }) => {
                                     return (
                                         <div className="individual-company-card" key={company.id}>
                                             <Link to={`/companies/${company.id}`} style={{ textDecoration: 'none' }}>
-                                                <p id="p-company"><b>{company.name}</b></p>
-                                                <img src={company.image ? company.image : "https://corefact-marketing.s3.us-west-1.amazonaws.com/random/upload-image.png"} alt="company feature" style={{ height: 100 + "px" }} />
-                                                <p id="p-industry">Industry: {company.industry}</p>
-                                                <p id="p-help-category">Help in {company.need_category}</p>
+                                                <div className="companies-card-card">
+                                                    <p id="p-company"><b>{company.name.toUpperCase()}</b></p>
+                                                    <img src={company.image ? company.image : "https://corefact-marketing.s3.us-west-1.amazonaws.com/random/upload-image.png"} alt="company feature" id="companies-img" />
+                                                    <p id="p-industry">Industry: {company.industry}</p>
+                                                    <p id="p-help-category">Help in {company.need_category}</p>
+                                                </div>
                                             </Link>
                                         </div>
                                     )

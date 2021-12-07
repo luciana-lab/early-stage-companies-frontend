@@ -29,7 +29,7 @@ class CompanyForm extends Component {
     render() {
         return (
             <div className="company-form-container">
-                <h3>ADD YOUR PROJECT</h3>
+                <h2>ADD A PROJECT</h2>
                 <hr />
                 {this.props.userLoggedIn.logged_in === false || this.props.userLoggedIn.logged_in === undefined ? <Redirect to={{ pathname: '/signin' }} /> :
                     <form onSubmit={this.handleSubmit}>
