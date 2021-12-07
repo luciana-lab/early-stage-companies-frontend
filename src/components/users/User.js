@@ -1,4 +1,5 @@
 import React from "react";
+import '../../style/User.css';
 
 const User = ({ companies, routerProps }) => {
     const filter = parseInt(routerProps.match.params.id)
@@ -19,11 +20,14 @@ const User = ({ companies, routerProps }) => {
     })
 
     return (
-        <div>
-            <p>{userFound && userFound.first_name}</p>
-            <p>{userFound && userFound.last_name}</p>
-            <p>{userFound && userFound.image}</p>
-            <p>{userFound && userFound.email}</p>
+        <div className="user-profile-container">
+            <img src={userFound && userFound.image} alt="user profile avatar" className="avatar" />
+            <div className="user-profile-name">
+                <h3>{userFound && userFound.first_name}</h3>
+                <h3>{userFound && userFound.last_name}</h3>
+            </div>
+            <hr />
+            <p id="user-profile-email">{userFound && userFound.email}</p>
             <p>{userFound && userFound.about}</p>
         </div>
     )

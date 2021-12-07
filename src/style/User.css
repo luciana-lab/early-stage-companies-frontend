@@ -1,0 +1,38 @@
+
+/* Container */
+.user-profile-container {
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+}
+
+.user-profile-container hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* User avatar */
+.avatar {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* User first name and last name on same line */
+.user-profile-name h3 {
+    display: inline-block;
+    padding: 3.5px;
+}
+
+#user-profile-email {
+    font-size: 14px;
+    color: dodgerblue;
+}

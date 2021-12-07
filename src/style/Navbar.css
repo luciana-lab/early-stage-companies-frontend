@@ -39,6 +39,7 @@ nav #logo img {
   height: auto;
 }
 
+/* logout button */
 nav li button {
   display: block;
   background-color: transparent;
