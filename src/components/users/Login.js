@@ -37,7 +37,7 @@ class Login extends Component {
                 <hr />
                 <form onSubmit={this.handleSubmit}>
                     <label>Email</label>
-                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange} placeholder="johndoe@johndoe.com" required />
 
                     <label>Password</label>
                     <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />

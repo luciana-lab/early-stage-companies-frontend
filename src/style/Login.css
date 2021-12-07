@@ -6,9 +6,8 @@ body {
     box-sizing: border-box;
 }
 
-/* Add padding to containers */
-.login-container,
-.login-signup-container {
+/* Add padding to sign in containers */
+.login-container {
     padding: 16px;
     position: absolute;
     top: 50%;
@@ -19,8 +18,30 @@ body {
     width: 50%;
 }
 
+/* Add padding to sign up container */
+/* .signup-main-container {
+    padding-bottom: 10%;
+    margin-bottom: 20%;
+} */
+
+.signup-container {
+    padding: 16px;
+    background-color: white;
+    width: 70%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
 /* Full-width input fields */
-input[type=email], input[type=password] {
+.login-container input[type=email],
+.login-container input[type=password],
+
+.signup-container input[type=text],
+.signup-container input[type=email],
+.signup-container input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -29,13 +50,19 @@ input[type=email], input[type=password] {
     background: #f1f1f1;
 }
 
-input[type=email]:focus, input[type=password]:focus {
+.login-container input[type=email]:focus,
+.login-container input[type=password]:focus,
+
+.signup-container input[type=text]:focus,
+.signup-container input[type=email]:focus, 
+.signup-container iinput[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }
 
 /* Overwrite default styles of hr */
-hr {
+.login-container hr,
+.signup-container hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
 }
