@@ -1,4 +1,4 @@
-import { SIGNUP, LOGIN, LOGOUT } from "./constants";
+import { LOGIN, LOGOUT } from "./constants";
 
 export function signup(user) {
     return dispatch => {
@@ -15,10 +15,8 @@ export function signup(user) {
         )
             .then(resp => resp.json())
             .then(data => {
-                // console.log("user created?", data)
                 if (data.status === "created") {
-                    // this.props.handleSuccessfulAuth(data.user)
-                    dispatch({ type: SIGNUP, payload: data })
+                    dispatch({ type: LOGIN, payload: data })
                 }
             })
             .catch(error => console.log("registration error", error))
@@ -40,11 +38,7 @@ export function login(user) {
         )
             .then(resp => resp.json())
             .then(data => {
-                // debugger
-                // console.log(data)
                 if (data.logged_in) {
-                    // console.log(data)
-                    // this.props.handleSuccessfulAuth(data.user)
                     dispatch({ type: LOGIN, payload: data })
                 } else {
                     throw new Error()
@@ -59,10 +53,8 @@ export function logout() {
             method: "DELETE"
         }, { withCredentials: true })
             .then(resp => resp.json())
-            // .then(data => console.log(data))
             .then(data => {
                 if (!data.logged_in) {
-                    // this.props.handleLogout(data)
                     dispatch({ type: LOGOUT, payload: data })
                 }
             })
@@ -76,13 +68,9 @@ export function loginStatus() {
             .then(resp => resp.json())
             .then(data => {
                 console.log("data?", data)
-                // console.log("data status", data.logged_in)
-                // console.log(this.state)
                 if (data.logged_in) {
-                    // this.setState({ user: data.user })
                     dispatch({ type: LOGIN, payload: data })
                 } else {
-                    // this.setState({ user: {} })
                     dispatch({ type: LOGOUT, payload: data })
                 }
             })

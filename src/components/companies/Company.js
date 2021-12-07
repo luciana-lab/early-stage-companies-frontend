@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeCompany } from '../../actions/companiesActions';
-import ContributionForm from '../contributions/ContributionForm';
+import ContributionForm from './contributions/ContributionForm';
 import { Link } from 'react-router-dom';
 import '../../style/Company.css';
 // import { Player } from 'video-react';
@@ -74,8 +74,10 @@ class Company extends Component {
                     </div>
                     <div className="card">
                         <div className="userimg" src={this.company && this.company.user.image}></div>
-                        <img src={`${this.company && this.company.user.image}`} alt="user image" style={{ height: 100 + "px" }} />
-                        <h4>{this.company && this.company.user.first_name}</h4>
+                        <img src={`${this.company && this.company.user.image}`} alt="user profile" style={{ height: 100 + "px" }} />
+                        <Link to={`/users/${this.company && this.company.user.id}`}>
+                            <h4>{this.company && this.company.user.first_name}</h4>
+                        </Link>
                         <p>{this.company && this.company.user.about}</p>
                     </div>
                     <div className="card">

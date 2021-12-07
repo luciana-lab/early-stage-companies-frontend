@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS, SIGNUP, LOGIN, LOGOUT } from '../actions/constants';
+import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS, LOGIN, LOGOUT } from '../actions/constants';
 
 const rootReducer = combineReducers({
     users: usersReducer,
@@ -12,17 +12,14 @@ export default rootReducer;
 
 function usersReducer(state = {}, action) {
     switch (action.type) {
-        case SIGNUP:
-            return [...state, action.payload, { loggedInStatus: true }]
+        // case SIGNUP:
+        //     return action.payload
 
         case LOGIN:
-            return [action.payload, { loggedInStatus: true }]
+            return action.payload
 
         case LOGOUT:
-            return { state: {}, loggedInStatus: false }
-
-        case "LOGGEDIN_STATUS":
-            return action.payload
+            return {}
 
         default:
             return state

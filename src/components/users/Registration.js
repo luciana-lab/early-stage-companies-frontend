@@ -1,57 +1,54 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { loginStatus } from "../../actions/usersActions";
+// import { connect } from 'react-redux';
+// import { loginStatus } from "../../actions/usersActions";
 import Signup from "./Signup";
 import Login from "./Login";
 import Logout from "./Logout";
 // import Pages from "../Pages";
 
 class Registration extends Component {
-    state = {
-        loggedInStatus: ""
-    }
+    // state = {
+    //     loggedInStatus: ""
+    // }
 
-    componentDidMount = () => {
-        // console.log("login status mount", this.props)
-        // console.log("login status mount", data)
-        // console.log("dispatch", this.props.dispatchLoginStatus())
-        this.props.dispatchLoginStatus()
-        // this.handleSuccessfulAuth(data)
-    }
+    // componentDidMount = () => {
+    // this.props.dispatchLoginStatus()
+    // }
 
-    handleSuccessfulAuth = data => {
-        console.log("this.state before", this.state)
-        console.log("handle successful auth", data)
-        // this.setState({ loggedInStatus: data.loggedInStatus })
-        this.props.dispatchGetStatus(this.state)
-        console.log("this.state after", this.state)
-    }
+    // handleSuccessfulAuth = data => {
+    // console.log("this.state before", this.state)
+    // console.log("handle successful auth", data)
+    // this.setState({ loggedInStatus: data.loggedInStatus })
+    // this.props.dispatchGetStatus(this.state)
+    // console.log("this.state after", this.state)
+    // }
 
     render() {
         return (
             <div>
-                <Login componentDidMount={this.componentDidMount} handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} />
+                <Login handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} />
                 <Signup handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} />
                 <Logout handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} />
-                {/* <Pages loggedInStatus={this.state.loggedInStatus} /> */}
+                {/* <Pages loggedInStatus={this.props.user} /> */}
             </div>
         )
     }
 
 }
 
-const mapStateToProps = state => {
-    return {
-        user: state.user
-    }
-}
+export default Registration;
 
-const mapDispatchToProps = dispatch => ({
-    dispatchLoginStatus: () => dispatch(loginStatus()),
-    dispatchGetStatus: payload => dispatch({ type: "LOGGEDIN_STATUS", payload })
-})
+// const mapStateToProps = state => {
+//     return {
+//         user: state.user
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Registration);
+// const mapDispatchToProps = dispatch => ({
+//     dispatchLoginStatus: () => dispatch(loginStatus())
+// })
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Registration);
 
 /*
 class Registration extends Component {

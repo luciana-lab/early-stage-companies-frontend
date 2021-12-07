@@ -6,7 +6,7 @@ class Login extends Component {
     state = {
         email: "",
         password: "",
-        loggedInStatus: "LOGGED_IN",
+        // loggedInStatus: "LOGGED_IN",
         loginErrors: ""
     }
 
@@ -19,9 +19,9 @@ class Login extends Component {
     handleSubmit = e => {
         e.preventDefault()
         // console.log(this.props)
-        console.log("from login", this.state)
+        // console.log("from login", this.state)
         this.props.dispatchLogin(this.state)
-        this.props.handleSuccessfulAuth(this.state)
+        // this.props.handleSuccessfulAuth(this.state)
 
         this.props.routerProps.history.push("/")
         // this.props.fetchLogin(this.state)

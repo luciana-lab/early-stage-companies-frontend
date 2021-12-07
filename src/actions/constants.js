@@ -6,6 +6,5 @@ export const DELETE_COMPANY = "EDIT_COMPANY";
 export const GET_CONTRIBUTIONS = "GET_CONTRIBUTIONS";
 export const ADD_CONTRIBUTION = "ADD_CONTRIBUTION";
 
-export const SIGNUP = "SIGNUP";
 export const LOGIN = "LOGIN";
 export const LOGOUT = "LOGOUT";

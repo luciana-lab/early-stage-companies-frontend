@@ -10,7 +10,7 @@ class Signup extends Component {
         password: "",
         about: "",
         image: "",
-        loggedInStatus: "LOGGED_IN",
+        // loggedInStatus: "LOGGED_IN",
         registrationErrors: ""
     }
 
@@ -23,7 +23,7 @@ class Signup extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.dispatchSignup(this.state)
-        this.props.handleSuccessfulAuth(this.state)
+        // this.props.handleSuccessfulAuth(this.state)
         this.props.routerProps.history.push("/")
         // this.props.fetchSignup(this.state)
     }

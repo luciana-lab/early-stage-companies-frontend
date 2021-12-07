@@ -9,6 +9,7 @@ class CompaniesContainer extends Component {
     }
 
     render() {
+        console.log("user?", this.props.userLoggedIn)
         return (
             <div>
                 <Pages companies={this.props.companies} />

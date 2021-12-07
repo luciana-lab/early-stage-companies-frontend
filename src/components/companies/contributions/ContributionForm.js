@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addContribution } from '../../actions/contributionsActions';
-import '../../style/ContributionForm.css';
+import { addContribution } from '../../../actions/contributionsActions';
+import '../../../style/ContributionForm.css';
 
 class ContributionForm extends Component {
     state = {

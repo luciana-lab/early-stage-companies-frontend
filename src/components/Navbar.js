@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import '.././style/Navbar.css';
 import logo from '.././style/logo.png';
 
-function Navbar() {
+function Navbar({ userLoggedIn }) {
     return (
         <nav>
             <ul>
@@ -11,7 +11,11 @@ function Navbar() {
                 <li><NavLink exact to="/">HOME</NavLink></li>
                 <li><NavLink exact to="/companies">PROJECTS</NavLink></li>
                 <li><NavLink exact to="/companies/new">START A PROJECT</NavLink></li>
-                <li><NavLink exact to="/signup">REGISTER</NavLink></li>
+                {userLoggedIn.logged_in ?
+                    <li><NavLink exact to="/signup">LOGOUT</NavLink></li>
+                    : <li><NavLink exact to="/signup">REGISTER</NavLink></li>
+                }
+
             </ul>
         </nav>
     )

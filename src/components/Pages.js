@@ -7,7 +7,7 @@ import Company from "./companies/Company";
 import CompanyEditForm from "./companies/CompanyEditForm";
 import User from "./users/User";
 
-function Pages({ companies }) {
+function Pages({ companies, loggedInStatus }) {
     // console.log(loggedInStatus)
     return (
         <div>
