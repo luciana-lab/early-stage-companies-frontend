@@ -10,7 +10,6 @@ class Signup extends Component {
         password: "",
         about: "",
         image: "",
-        // loggedInStatus: "LOGGED_IN",
         registrationErrors: ""
     }
 
@@ -29,6 +28,7 @@ class Signup extends Component {
     }
 
     render() {
+        console.log(this.props.routerProps)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>

@@ -4,16 +4,10 @@ import { removeCompany } from '../../actions/companiesActions';
 import ContributionForm from './contributions/ContributionForm';
 import { Link } from 'react-router-dom';
 import '../../style/Company.css';
-// import { Player } from 'video-react';
-// import "node_modules/video-react/dist/video-react.css";
-
 class Company extends Component {
     constructor(props) {
         super(props)
-        // console.log(this.props)
-        // console.log(this.props.routerProps.match.params.id)
         this.company = this.props.companies.find(company => company.id === parseInt(this.props.routerProps.match.params.id))
-        // console.log(this.company.contributions)
 
         this.state = {
             contributionBtn: false
@@ -49,7 +43,7 @@ class Company extends Component {
                                 <h2>{this.company && this.company.name}</h2>
                             </Link>
                             <div className="video-responsive">
-                                <iframe src={`${this.company && this.company.video}`} title="video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe src={`${this.company && this.company.video}`} title="video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             </div>
                             <p>Industry: <b>{this.company && this.company.industry}</b></p>
                             <p style={{ whiteSpace: "pre-wrap" }}>{this.company && this.company.description}</p>

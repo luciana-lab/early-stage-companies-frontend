@@ -3,16 +3,15 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/usersActions';
 
 class Logout extends Component {
+
+    //TODO not using this, remove it.
+
     state = {
-        // loggedInStatus: "NOT_LOGGED_IN",
         user: {}
     }
 
     handleLogoutClick = () => {
-        // console.log(this.props)
-        // console.log("from logout", this.state)
         this.props.logout(this.state)
-        // this.props.handleSuccessfulAuth(this.state)
     }
 
     render() {
@@ -24,8 +23,6 @@ class Logout extends Component {
         )
     }
 }
-
-// mapDispatchToProps
 
 export default connect(null, { logout })(Logout);
 

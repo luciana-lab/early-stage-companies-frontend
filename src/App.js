@@ -1,7 +1,6 @@
 // import logo from './logo.svg';
 import React, { Component } from 'react';
 import './App.css';
-// import Pages from './components/Pages';
 import Navbar from './components/Navbar';
 import CompaniesContainer from './containers/CompaniesContainer';
 import { loginStatus } from './actions/usersActions';
@@ -18,7 +17,6 @@ class App extends Component {
       <div className="App">
         <Navbar userLoggedIn={this.props.users ? this.props.users : null} />
         <CompaniesContainer userLoggedIn={this.props.users ? this.props.users : null} />
-        {/* <Pages /> */}
       </div>
     );
   }

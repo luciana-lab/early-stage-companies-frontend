@@ -9,10 +9,10 @@ class CompaniesContainer extends Component {
     }
 
     render() {
-        console.log("user?", this.props.userLoggedIn)
+        console.log("user?", this.props.userLoggedIn.logged_in)
         return (
             <div>
-                <Pages companies={this.props.companies} />
+                <Pages companies={this.props.companies} userLoggedIn={this.props.userLoggedIn} />
             </div>
         )
     }
