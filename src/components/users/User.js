@@ -21,7 +21,7 @@ const User = ({ companies, routerProps }) => {
 
     return (
         <div className="user-profile-container">
-            <img src={userFound && userFound.image} alt="user profile avatar" className="avatar" />
+            <img src={userFound && userFound.image} alt="user profile avatar" className="user-profile-avatar" />
             <div className="user-profile-name">
                 <h3>{userFound && userFound.first_name}</h3>
                 <h3>{userFound && userFound.last_name}</h3>

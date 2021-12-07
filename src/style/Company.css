@@ -10,36 +10,38 @@ body {
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
-.leftcolumn {   
+.company-leftcolumn {   
     float: left;
     width: 75%;
 }
   
 /* Right column */
-.rightcolumn {
+.company-rightcolumn {
     float: left;
     width: 25%;
     background-color: #f1f1f1;
     padding-left: 20px;
 }
   
-/* User image */
-.userimg {
-    /* background-color: #aaa; */
-    width: 100%;
-    /* padding: 10px; */
-    
+/* User avatar */
+.company-user-avatar {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Add a card effect for articles */
-.card {
+.card,
+.card-about-me {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
 }
   
 /* Clear floats after the columns */
-.row:after {
+.company-row:after {
     content: "";
     display: table;
     clear: both;
@@ -47,7 +49,7 @@ body {
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {   
+    .company-leftcolumn, .company-rightcolumn {   
       width: 100%;
       padding: 0;
     }
@@ -71,6 +73,10 @@ body {
 #contributions-length h2,
 #contributions-length p {
     display: inline;
+}
+
+#contributions-length {
+    text-align: center;
 }
 
 #contributions-btn button {
@@ -121,4 +127,37 @@ body {
 #company-edit-btn:hover,
 #company-delete-btn:hover {
     opacity: 1;
+}
+
+/* Company hr */
+.company-leftcolumn .card hr,
+.company-rightcolumn .card hr,
+.company-rightcolumn .card-about-me hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+.company-leftcolumn .card h2,
+.company-rightcolumn .card h4,
+.card-about-me {
+    text-align: center;
+    color: black;
+}
+
+.company-leftcolumn .card #company-industry,
+.company-rightcolumn .card #company-help-category {
+    font-size: 15px;
+}
+
+.company-leftcolumn .card #company-description {
+    text-align: justify;
+}
+
+#company-user-owner-name h4 {
+    display: inline-block;
+    padding: 3px;
+}
+
+.company-leftcolumn .card #company-user-owner-nam {
+    text-align: center;
 }

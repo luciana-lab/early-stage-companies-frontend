@@ -1,4 +1,4 @@
-nav ul {
+.navbar nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -6,11 +6,11 @@ nav ul {
   background-color: #50473e;
 }
   
-nav li {
+.navbar nav li {
   float: left;
 }
   
-nav li a {
+.navbar nav li a {
   display: block;
   color: white;
   text-align: center;
@@ -18,29 +18,29 @@ nav li a {
   text-decoration: none;
 }
   
-nav li a:hover:not(.active),
-nav li button:hover {
+.navbar nav li a:hover:not(.active),
+.navbar nav li button:hover {
   background-color: #342a19;
 }
   
-nav .active {
+.navbar nav .active {
   border-bottom: #fe5e1d solid;
 }
 
-nav #logo {
+.navbar nav #logo {
   width: 65%;
   padding: 1%;
   padding-left: 10%;
   height: auto;
 }
   
-nav #logo img {
+.navbar nav #logo img {
   width: 65%;
   height: auto;
 }
 
 /* logout button */
-nav li button {
+.navbar nav li button {
   display: block;
   background-color: transparent;
   background-repeat: no-repeat;

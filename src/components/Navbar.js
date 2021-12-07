@@ -11,19 +11,21 @@ class Navbar extends Component {
     }
     render() {
         return (
-            <nav>
-                <ul>
-                    <li><div id="logo"><img src={logo} className="img-responsive main-image" alt="logo" /></div></li>
-                    <li><NavLink exact to="/">HOME</NavLink></li>
-                    <li><NavLink exact to="/companies">PROJECTS</NavLink></li>
-                    <li><NavLink exact to="/companies/new">START A PROJECT</NavLink></li>
-                    {this.props.userLoggedIn.logged_in ?
-                        <li><button onClick={() => this.props.logout(this.state)}>LOGOUT</button></li>
-                        : <li><NavLink exact to="/signin">SIGN IN</NavLink></li>
-                    }
+            <div className="navbar">
+                <nav>
+                    <ul>
+                        <li><div id="logo"><img src={logo} className="img-responsive main-image" alt="logo" /></div></li>
+                        <li><NavLink exact to="/">HOME</NavLink></li>
+                        <li><NavLink exact to="/companies">PROJECTS</NavLink></li>
+                        <li><NavLink exact to="/companies/new">START A PROJECT</NavLink></li>
+                        {this.props.userLoggedIn.logged_in ?
+                            <li><button onClick={() => this.props.logout(this.state)}>LOGOUT</button></li>
+                            : <li><NavLink exact to="/signin">SIGN IN</NavLink></li>
+                        }
 
-                </ul>
-            </nav>
+                    </ul>
+                </nav>
+            </div>
         )
     }
 }
