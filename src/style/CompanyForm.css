@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add padding to container */
+.company-form-container{
+    padding: 16px;
+    background-color: white;
+    width: 70%;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Full-width input fields */
+.company-form-container input[type=text],
+.company-form-container textarea,
+.company-form-container select {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.company-form-container input[type=text]:focus,
+.company-form-container textarea:focus,
+.company-form-container select:focus  {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+.company-form-container hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+#company-form-btn {
+    background-color: #fe5e1d;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+#company-form-btn:hover {
+    opacity: 1;
+}

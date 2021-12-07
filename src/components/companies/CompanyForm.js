@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { addCompany } from '../../actions/companiesActions';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-// import Popup from 'react-popup';
+import '../../style/CompanyForm.css';
 
 class CompanyForm extends Component {
     state = {
@@ -28,7 +28,9 @@ class CompanyForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="company-form-container">
+                <h3>ADD YOUR PROJECT</h3>
+                <hr />
                 {this.props.userLoggedIn.logged_in === false || this.props.userLoggedIn.logged_in === undefined ? <Redirect to={{ pathname: '/signup' }} /> :
                     <form onSubmit={this.handleSubmit}>
                         <label htmlFor="company-name-input">Company Name</label>
@@ -71,11 +73,11 @@ class CompanyForm extends Component {
                         <input type="text" name="image" id="company-image-input" value={this.state.image} onChange={this.handleChange} />
                         <br />
 
-                        <label htmlFor="company-video-input">Video</label>
+                        <label htmlFor="company-video-input">Presentation Video</label>
                         <input type="text" name="video" id="company-video-input" value={this.state.video} onChange={this.handleChange} />
                         <br />
 
-                        <label htmlFor="company-need-category-select">Help Need Category</label>
+                        <label htmlFor="company-need-category-select">Help Category</label>
                         <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange} required>
                             <option value="none" selecteddisabledhidden="true">Select an Option</option>
                             <option value="Admin">Admin</option>
@@ -87,11 +89,11 @@ class CompanyForm extends Component {
                         </select>
                         <br />
 
-                        <label htmlFor="company-need-input">Describe Your Need</label>
+                        <label htmlFor="company-need-input">In a few words, how the community can help you?</label>
                         <textarea name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} required />
                         <br />
 
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" id="company-form-btn" />
                     </form>
                 }
             </div>
