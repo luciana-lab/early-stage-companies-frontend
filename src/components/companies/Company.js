@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeCompany } from '../../actions/companiesActions';
 import ContributionForm from './contributions/ContributionForm';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import '../../style/Company.css';
 class Company extends Component {
     constructor(props) {
@@ -29,11 +29,29 @@ class Company extends Component {
 
     contributionForm = () => {
         if (this.state.contributionBtn === true) {
-            return <ContributionForm companyId={this.company.id} />
+            if (this.props.userLoggedIn.logged_in === false || this.props.userLoggedIn.logged_in === undefined) {
+                return <Redirect to="/signin" />
+            } else {
+                return <ContributionForm companyId={this.company.id} />
+            }
+        }
+    }
+
+    displayButtons = () => {
+        if ((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === (this.company && this.company.user.id))) {
+            return (
+                <div>
+                    <button id="company-edit-btn" onClick={this.handleEditCompany}>Edit Company</button>
+                    <button id="company-delete-btn" onClick={this.handleDeleteCompany}>Delete Company</button>
+                </div>
+            )
         }
     }
 
     render() {
+        console.log("company user from props", this.props.userLoggedIn.user)
+        console.log("company user", this.company && this.company.user)
+        // debugger
         return (
             <div>
                 <div className="company-row">
@@ -49,8 +67,9 @@ class Company extends Component {
                                 </div>
                                 <p id="company-industry">Industry: <b>{this.company && this.company.industry}</b></p>
                                 <p id="company-description" style={{ whiteSpace: "pre-wrap" }}>{this.company && this.company.description}</p>
-                                <button id="company-edit-btn" onClick={this.handleEditCompany}>Edit Company</button>
-                                <button id="company-delete-btn" onClick={this.handleDeleteCompany}>Delete Company</button>
+
+                                {this.displayButtons()}
+
                             </div>
                         </div>
                     </div>

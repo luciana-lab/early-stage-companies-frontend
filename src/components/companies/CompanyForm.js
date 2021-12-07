@@ -31,7 +31,7 @@ class CompanyForm extends Component {
             <div className="company-form-container">
                 <h3>ADD YOUR PROJECT</h3>
                 <hr />
-                {this.props.userLoggedIn.logged_in === false || this.props.userLoggedIn.logged_in === undefined ? <Redirect to={{ pathname: '/signup' }} /> :
+                {this.props.userLoggedIn.logged_in === false || this.props.userLoggedIn.logged_in === undefined ? <Redirect to={{ pathname: '/signin' }} /> :
                     <form onSubmit={this.handleSubmit}>
                         <label htmlFor="company-name-input">Company Name</label>
                         <input type="text" name="name" id="company-name-input" value={this.state.name} onChange={this.handleChange} required />
