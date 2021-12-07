@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { login } from '../../actions/usersActions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import '../../style/Login.css';
 
 class Login extends Component {
     state = {
@@ -30,7 +32,9 @@ class Login extends Component {
     render() {
         // console.log(this.props)
         return (
-            <div>
+            <div className="login-container">
+                <h3>SIGN IN</h3>
+                <hr />
                 <form onSubmit={this.handleSubmit}>
                     <label>Email</label>
                     <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
@@ -38,8 +42,9 @@ class Login extends Component {
                     <label>Password</label>
                     <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
 
-                    <input type="submit" value="Login" />
+                    <input type="submit" value="Login" id="login-btn" />
                 </form>
+                <p id="login-signup-p-tag">Don't have an account yet? <Link to="/signup">Sign up</Link></p>
             </div>
         )
     }

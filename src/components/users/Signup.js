@@ -28,7 +28,6 @@ class Signup extends Component {
     }
 
     render() {
-        console.log(this.props.routerProps)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>

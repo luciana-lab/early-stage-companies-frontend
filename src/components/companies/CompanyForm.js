@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { addCompany } from '../../actions/companiesActions';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
+// import Popup from 'react-popup';
 
 class CompanyForm extends Component {
     state = {

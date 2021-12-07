@@ -7,8 +7,8 @@ class Registration extends Component {
     render() {
         return (
             <div>
-                <Login handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} />
-                <Signup handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} />
+                <Login routerProps={this.props.routerProps} userStatus={this.props.user} />
+                <Signup routerProps={this.props.routerProps} userStatus={this.props.user} />
                 {/* <Logout handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} /> */}
             </div>
         )

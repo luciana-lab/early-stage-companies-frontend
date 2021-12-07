@@ -19,7 +19,7 @@ class Navbar extends Component {
                     <li><NavLink exact to="/companies/new">START A PROJECT</NavLink></li>
                     {this.props.userLoggedIn.logged_in ?
                         <li><button onClick={() => this.props.logout(this.state)}>LOGOUT</button></li>
-                        : <li><NavLink exact to="/signup">REGISTER</NavLink></li>
+                        : <li><NavLink exact to="/signin">SIGN IN</NavLink></li>
                     }
 
                 </ul>
