@@ -7,21 +7,28 @@ body {
 } */
 
 /* Create three equal columns that floats next to each other */
-.company-column-right,
-.company-column-left {
+.companies-column-left {
     float: left;
     width: 50%;
-    padding: 15px;
-    text-align: justify;
+    /* padding-left: 8px; */
 }
 
-.company-column-right {
+.companies-column-right {
+    float: left;
+    width: 50%;
     background-color: #f1f1f1;
-    padding-left: 20px;
+    padding-left: 5px;
+    padding-right: 15px;
+}
+
+.companies-card-right,
+.companies-card-left {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .individual-company-card {
-    /* background-color: white; */
     padding: 10px;
     margin-top: 10px;
     text-align: center;
@@ -44,7 +51,7 @@ body {
 }
   
 /* Clear floats after the columns */
-.row:after {
+.companies-row:after {
     content: "";
     display: table;
     clear: both;
@@ -52,16 +59,28 @@ body {
   
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
-    .company-column-left,
-    .company-column-right {   
+    .companies-column-left,
+    .companies-column-right {   
       width: 100%;
       padding: 0;
     }
 }
 
-.company-column-right h3, p {
+.companies-column-right h3, p {
     color: black;
 }
+
+.companies-column-right h4,
+.companies-column-left h4 {
+    text-align: center;
+}
+
+.companies-column-left hr,
+.companies-column-right hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
 
 /* scrolling */
 .scrolling-wrapper {

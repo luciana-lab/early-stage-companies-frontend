@@ -49,9 +49,6 @@ class Company extends Component {
     }
 
     render() {
-        console.log("company user from props", this.props.userLoggedIn.user)
-        console.log("company user", this.company && this.company.user)
-        // debugger
         return (
             <div>
                 <div className="company-row">
@@ -109,7 +106,10 @@ class Company extends Component {
                                         <Link to={`/users/${contribution.user.id}`}>
                                             <p>{contribution.user.first_name}</p>
                                         </Link>
-                                        <p>{contribution.content}</p>
+                                        {((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === (this.company && this.company.user.id)) ||
+                                            (this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === contribution.user.id)) ?
+                                            <p>{contribution.content}</p>
+                                            : null}
                                     </div>
                                 )
                             })}
