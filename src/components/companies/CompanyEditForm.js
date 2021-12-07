@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { editCompany } from '../../actions/companiesActions';
+import '../../style/CompanyForm.css';
 
 class CompanyEditForm extends Component {
     constructor(props) {
@@ -34,7 +35,9 @@ class CompanyEditForm extends Component {
 
     render() {
         return (
-            <div>
+            <div className="company-form-container">
+                <h3>EDIT YOUR PROJECT</h3>
+                <hr />
                 {this.props.userLoggedIn.logged_in === false || this.props.userLoggedIn.logged_in === undefined ? <Redirect to={{ pathname: '/signup' }} /> :
                     <form onSubmit={this.handleSubmit}>
                         <label htmlFor="company-name-input">Company Name</label>
@@ -98,7 +101,7 @@ class CompanyEditForm extends Component {
                         <textarea name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} required />
                         <br />
 
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" id="company-form-btn" />
                     </form>
                 }
             </div>
