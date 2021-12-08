@@ -6,6 +6,10 @@ body {
     margin: 0;
 } */
 
+.companies-row {
+    overflow: hidden;
+}
+
 /* Create three equal columns that floats next to each other */
 .companies-column-left {
     float: left;
@@ -17,8 +21,9 @@ body {
     float: left;
     width: 50%;
     background-color: #f1f1f1;
-    padding-left: 5px;
+    /* padding-left: 5px; */
     padding-right: 15px;
+
 }
 
 .companies-card-right,
@@ -26,6 +31,9 @@ body {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
+    /* flex: 1; */
+    margin-bottom: -10000px;
+    padding-bottom: 10000px;
 }
 
 .individual-company-card {
@@ -38,7 +46,9 @@ body {
     position: relative;
     text-align: center;
     margin-top: 5%;
-    height: 522px;
+    /* height: 522px; */
+    height: auto;
+    /* min-height: 522px; */
 }
 
 .individual-company-card .companies-card-card {

@@ -7,12 +7,14 @@ import Company from "./companies/Company";
 import CompanyEditForm from "./companies/CompanyEditForm";
 import User from "./users/User";
 import Signup from "./users/Signup";
+import Home from './Home';
 
 function Pages({ companies, userLoggedIn }) {
     // console.log(loggedInStatus)
     return (
         <div>
             <Switch>
+                <Route exact path="/" component={routerProps => <Home routerProps={routerProps} />} />
                 <Route exact path="/signin" component={routerProps => <Login routerProps={routerProps} />} />
                 <Route exact path="/signup" component={routerProps => <Signup routerProps={routerProps} />} />
                 <Route exact path="/companies" component={routerProps => <Companies companies={companies} routerInfo={routerProps} />} />
