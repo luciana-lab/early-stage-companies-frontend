@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addContribution } from '../../../actions/contributionsActions';
-import '../../../style/ContributionForm.css';
+import { Redirect } from 'react-router';
+import { addContribution } from '../../actions/contributionsActions';
+import '../../style/ContributionForm.css';
 
 class ContributionForm extends Component {
     state = {
@@ -15,6 +16,7 @@ class ContributionForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.dispatchAddContribution({ ...this.state, company_id: this.props.companyId })
+        this.setState({ content: '' })
     }
 
     render() {

@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeCompany } from '../../actions/companiesActions';
-import ContributionForm from './contributions/ContributionForm';
+import ContributionForm from '../contributions/ContributionForm';
 import { Link, Redirect } from 'react-router-dom';
 import '../../style/Company.css';
+
 class Company extends Component {
     constructor(props) {
         super(props)
         this.company = this.props.companies.find(company => company.id === parseInt(this.props.routerProps.match.params.id))
 
         this.state = {
-            contributionBtn: false
+            contributionBtn: ''
         }
     }
 
@@ -24,16 +25,19 @@ class Company extends Component {
     }
 
     handleContributionClick = () => {
-        this.setState({ contributionBtn: true })
+        // console.log(this.props.userLoggedIn.logged_in)
+        if (this.props.userLoggedIn.logged_in === true) {
+            this.setState({ contributionBtn: true })
+        } else {
+            this.setState({ contributionBtn: false })
+        }
     }
 
     contributionForm = () => {
         if (this.state.contributionBtn === true) {
-            if (this.props.userLoggedIn.logged_in === false || this.props.userLoggedIn.logged_in === undefined) {
-                return <Redirect to="/signin" />
-            } else {
-                return <ContributionForm companyId={this.company.id} />
-            }
+            return <ContributionForm companyId={this.company.id} />
+        } else if (this.state.contributionBtn === false) {
+            return <Redirect to="/signin" />
         }
     }
 

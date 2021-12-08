@@ -12,9 +12,6 @@ export default rootReducer;
 
 function usersReducer(state = {}, action) {
     switch (action.type) {
-        // case SIGNUP:
-        //     return action.payload
-
         case LOGIN:
             return action.payload
 
@@ -37,6 +34,8 @@ function companiesReducer(state = [], action) {
         case EDIT_COMPANY:
             const companyIndex = state.findIndex(company => company.id === action.payload.id)
             return [...state.slice(0, companyIndex), action.payload, ...state.slice(companyIndex + 1)]
+        // const company = state.filter(company => company.id !== action.payload)
+        // return [...state.filter(company => company.id !== action.payload), action.payload]
 
         case DELETE_COMPANY:
             const companies = state.filter(company => company.id !== action.payload)

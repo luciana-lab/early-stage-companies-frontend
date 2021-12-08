@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import ContributionForm from '../components/companies/contributions/ContributionForm';
-import Contributions from '../components/companies/contributions/Contributions';
+import Contributions from '../components/contributions/Contributions';
 import { connect } from 'react-redux';
 import { fetchContributions } from './../actions/contributionsActions';
 

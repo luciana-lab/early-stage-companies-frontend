@@ -20,10 +20,10 @@ class Login extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        // console.log(this.props)
-        // console.log("from login", this.state)
         this.props.dispatchLogin(this.state)
-        this.props.routerProps.history.push("/companies")
+        // this.props.routerProps.history.push("/companies")
+        this.props.routerProps.history.goBack()
+
     }
 
     render() {

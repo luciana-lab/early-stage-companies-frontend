@@ -11,6 +11,7 @@ const User = ({ companies, routerProps }) => {
                 // debugger
                 return userFound = contribution.user
             }
+            return null;
         })
     })
 
@@ -18,6 +19,7 @@ const User = ({ companies, routerProps }) => {
         if (company.user.id === filter) {
             return userFound = company.user
         }
+        return null;
     })
 
     return (

@@ -25,7 +25,6 @@ class Signup extends Component {
         e.preventDefault()
         this.props.dispatchSignup(this.state)
         this.props.routerProps.history.push("/companies")
-
     }
 
     render() {

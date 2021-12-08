@@ -66,3 +66,8 @@
 .company-form-container h2 {
     text-align: center;
 }
+
+#company-description-text,
+#company-need-input {
+    white-space: pre-line;
+}

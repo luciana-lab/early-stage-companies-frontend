@@ -31,7 +31,7 @@ export function editCompany(company) {
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
-            body: JSON.stringify(company)
+            body: JSON.stringify({ ...company })
         })
             .then(resp => resp.json())
             .then(data => dispatch({ type: EDIT_COMPANY, payload: data }))
