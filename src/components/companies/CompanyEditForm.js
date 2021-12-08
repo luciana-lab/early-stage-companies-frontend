@@ -34,6 +34,7 @@ class CompanyEditForm extends Component {
     }
 
     render() {
+
         return (
             <div className="company-form-container">
                 <h2>EDIT YOUR PROJECT</h2>

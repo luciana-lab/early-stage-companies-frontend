@@ -38,7 +38,7 @@ class Company extends Component {
     }
 
     displayButtons = () => {
-        if ((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === (this.company && this.company.user.id))) {
+        if (this.props.userLoggedIn.logged_in === true && this.props.userLoggedIn.user.id === (this.company && this.company.user.id)) {
             return (
                 <div>
                     <button id="company-edit-btn" onClick={this.handleEditCompany}>Edit Company</button>
@@ -88,7 +88,7 @@ class Company extends Component {
                         <div className="card-about-me">
                             {/* <div className="userimg" src={this.company && this.company.user.image}></div> */}
                             <Link to={`/users/${this.company && this.company.user.id}`}>
-                                <img src={`${this.company && this.company.user.image ? this.company.user.image : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"}`} alt="user profile" className="company-user-avatar" />
+                                <img src={`${(this.company && this.company.user.image) ? this.company.user.image : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"}`} alt="user profile" className="company-user-avatar" />
                                 <div id="company-user-owner-name">
                                     <h4>{this.company && this.company.user.first_name.toUpperCase()}</h4>
                                     <h4>{this.company && this.company.user.last_name.toUpperCase()}</h4>
@@ -106,8 +106,8 @@ class Company extends Component {
                                         <Link to={`/users/${contribution.user.id}`}>
                                             <p>{contribution.user.first_name}</p>
                                         </Link>
-                                        {((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === (this.company && this.company.user.id)) ||
-                                            (this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === contribution.user.id)) ?
+                                        {(((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === (this.company && this.company.user.id))) ||
+                                            ((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === contribution.user.id))) ?
                                             <p>{contribution.content}</p>
                                             : null}
                                     </div>

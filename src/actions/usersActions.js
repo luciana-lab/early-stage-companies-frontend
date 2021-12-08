@@ -67,15 +67,16 @@ export function loginStatus() {
         fetch("/logged_in", { withCredentials: true })
             .then(resp => resp.json())
             .then(data => {
-                console.log("data?", data)
+                // console.log("data?", data)
                 if (data.logged_in) {
                     dispatch({ type: LOGIN, payload: data })
                 } else {
                     dispatch({ type: LOGOUT, payload: data })
                 }
             })
-            .catch(error => {
-                console.log("check login error", error)
-            })
+        // .catch(error => {
+        // debugger
+        // console.log("check login error", error)
+        // })
     }
 }

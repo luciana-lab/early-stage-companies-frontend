@@ -29,9 +29,16 @@ body {
 }
 
 .individual-company-card {
-    padding: 10px;
+    padding: 0px;
     margin-top: 10px;
     text-align: center;
+}
+
+.companies-right-card {
+    position: relative;
+    text-align: center;
+    margin-top: 5%;
+    height: 522px;
 }
 
 .individual-company-card .companies-card-card {
@@ -59,6 +66,11 @@ body {
 
 #p-industry {
     padding-top: 20px;
+}
+
+#companies-right-img {
+    height: auto;
+    max-width: 100%;
 }
 
 #companies-img {
@@ -144,6 +156,6 @@ body {
     } */
 }
 
-&::-webkit-scrollbar {
+/* &::-webkit-scrollbar {
     display: none;
-}
+} */

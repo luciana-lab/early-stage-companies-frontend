@@ -13,12 +13,14 @@ const Companies = ({ companies }) => {
                                 <div className="companies-card-right">
                                     <h2>FRESH FAVORITE</h2>
                                     <hr />
-                                    <Link to={`/companies/${company.id}`} style={{ textDecoration: 'none' }}>
-                                        <img src={company.image} alt="company feature" style={{ height: 400 + "px" }} />
-                                        <h3 id="feature-company">{company.name.toUpperCase()}</h3>
-                                        <p id="feature-industry">Industry: {company.industry}</p>
-                                        <p id="feature-help-category">Help in {company.need_category}</p>
-                                    </Link>
+                                    <div className="companies-right-card">
+                                        <Link to={`/companies/${company.id}`} style={{ textDecoration: 'none' }}>
+                                            <img src={company.image} alt="company feature" id="companies-right-img" />
+                                            <h3 id="feature-company">{company.name.toUpperCase()}</h3>
+                                            <p id="feature-industry">Industry: {company.industry}</p>
+                                            <p id="feature-help-category">Help in {company.need_category}</p>
+                                        </Link>
+                                    </div>
                                 </div>
                             </div>
                         )
