@@ -8,6 +8,7 @@ import CompanyEditForm from "./companies/CompanyEditForm";
 import User from "./users/User";
 import Signup from "./users/Signup";
 import Home from './Home';
+// import Footer from "./Footer";
 
 function Pages({ companies, userLoggedIn }) {
     // console.log(loggedInStatus)
@@ -23,6 +24,7 @@ function Pages({ companies, userLoggedIn }) {
                 <Route exact path="/companies/:id/edit" component={routerProps => <CompanyEditForm routerProps={routerProps} companies={companies} userLoggedIn={userLoggedIn} />} userLoggedIn={userLoggedIn} />
                 <Route exact path="/users/:id" component={routerProps => <User routerProps={routerProps} companies={companies} />} />
             </Switch>
+            {/* <Footer /> */}
         </div>
     )
 }

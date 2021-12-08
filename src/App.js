@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import CompaniesContainer from './containers/CompaniesContainer';
 import { loginStatus } from './actions/usersActions';
 import { connect } from 'react-redux';
+// import Footer from './components/Footer';
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
       <div className="App">
         <Navbar userLoggedIn={this.props.users ? this.props.users : null} />
         <CompaniesContainer userLoggedIn={this.props.users ? this.props.users : null} />
+        {/* <Footer /> */}
       </div>
     );
   }
