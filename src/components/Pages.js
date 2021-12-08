@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Companies from '../components/companies/Companies';
 import Login from "./users/Login";
 import CompanyForm from "./companies/CompanyForm";
@@ -12,6 +12,7 @@ import Home from './Home';
 
 function Pages({ companies, userLoggedIn }) {
     // console.log(loggedInStatus)
+
     return (
         <div>
             <Switch>
@@ -21,7 +22,7 @@ function Pages({ companies, userLoggedIn }) {
                 <Route exact path="/companies" component={routerProps => <Companies companies={companies} routerInfo={routerProps} />} />
                 <Route exact path="/companies/new" component={routerProps => <CompanyForm routerProps={routerProps} userLoggedIn={userLoggedIn} />} />
                 <Route exact path="/companies/:id" component={routerProps => <Company routerProps={routerProps} companies={companies} userLoggedIn={userLoggedIn} />} />
-                <Route exact path="/companies/:id/edit" component={routerProps => <CompanyEditForm routerProps={routerProps} companies={companies} userLoggedIn={userLoggedIn} />} userLoggedIn={userLoggedIn} />
+                <Route exact path="/companies/:id/edit" component={routerProps => <CompanyEditForm routerProps={routerProps} companies={companies} userLoggedIn={userLoggedIn} />} />
                 <Route exact path="/users/:id" component={routerProps => <User routerProps={routerProps} companies={companies} />} />
             </Switch>
             {/* <Footer /> */}

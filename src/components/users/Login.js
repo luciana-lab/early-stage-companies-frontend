@@ -23,14 +23,10 @@ class Login extends Component {
         // console.log(this.props)
         // console.log("from login", this.state)
         this.props.dispatchLogin(this.state)
-        // this.props.handleSuccessfulAuth(this.state)
-
-        this.props.routerProps.history.push("/")
-        // this.props.fetchLogin(this.state)
+        this.props.routerProps.history.push("/companies")
     }
 
     render() {
-        // console.log(this.props)
         return (
             <div className="login-container">
                 <h3>SIGN IN</h3>

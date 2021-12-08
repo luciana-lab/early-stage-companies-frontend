@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { editCompany } from '../../actions/companiesActions';
 import '../../style/CompanyForm.css';
+import Login from '../users/Login';
 
 class CompanyEditForm extends Component {
     constructor(props) {
@@ -36,74 +37,77 @@ class CompanyEditForm extends Component {
     render() {
 
         return (
-            <div className="company-form-container">
-                <h2>EDIT YOUR PROJECT</h2>
-                <hr />
-                {this.props.userLoggedIn.logged_in === false || this.props.userLoggedIn.logged_in === undefined ? <Redirect to={{ pathname: '/signin' }} /> :
-                    <form onSubmit={this.handleSubmit}>
-                        <label htmlFor="company-name-input">Company Name</label>
-                        <input type="text" name="name" id="company-name-input" value={this.state.name} onChange={this.handleChange} required />
-                        <br />
+            <div>
+                {this.props.userLoggedIn.logged_in === false || this.props.userLoggedIn.logged_in === undefined ? <Login routerProps={this.props.routerProps} /> :
+                    <div className="company-form-container">
+                        <h2>EDIT YOUR PROJECT</h2>
+                        <hr />
+                        <form onSubmit={this.handleSubmit}>
+                            <label htmlFor="company-name-input">Company Name</label>
+                            <input type="text" name="name" id="company-name-input" value={this.state.name} onChange={this.handleChange} required />
+                            <br />
 
-                        <label htmlFor="company-website-input">Website</label>
-                        <input type="text" name="website" id="company-website-input" value={this.state.website} onChange={this.handleChange} />
-                        <br />
+                            <label htmlFor="company-website-input">Website</label>
+                            <input type="text" name="website" id="company-website-input" value={this.state.website} onChange={this.handleChange} />
+                            <br />
 
-                        <label htmlFor="company-industry-select">Industry</label>
-                        <select name="industry" id="company-industry-select" value={this.state.industry} onChange={this.handleChange} required>
-                            <option value="none" selecteddisabledhidden="true">Select an Option</option>
-                            <option value="Agriculture">Agriculture</option>
-                            <option value="Arts">Arts</option>
-                            <option value="Automotive">Automotive</option>
-                            <option value="Beauty">Beauty</option>
-                            <option value="Construction">Construction</option>
-                            <option value="Education">Education</option>
-                            <option value="Energy">Energy</option>
-                            <option value="Finance">Finance</option>
-                            <option value="Fitness">Fitness</option>
-                            <option value="Food & Beverage">Food & Beverage</option>
-                            <option value="Healthcare">Healthcare</option>
-                            <option value="Legal">Legal</option>
-                            <option value="Non-profit/Social">Non-Profit/Social</option>
-                            <option value="Supply Chain">Supply Chain</option>
-                            <option value="Technology">Technology</option>
-                            <option value="Tourism">Tourism</option>
-                            <option value="Wellness">Wellness</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <br />
+                            <label htmlFor="company-industry-select">Industry</label>
+                            <select name="industry" id="company-industry-select" value={this.state.industry} onChange={this.handleChange} required>
+                                <option value="none" selecteddisabledhidden="true">Select an Option</option>
+                                <option value="Agriculture">Agriculture</option>
+                                <option value="Arts">Arts</option>
+                                <option value="Automotive">Automotive</option>
+                                <option value="Beauty">Beauty</option>
+                                <option value="Construction">Construction</option>
+                                <option value="Education">Education</option>
+                                <option value="Energy">Energy</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Fitness">Fitness</option>
+                                <option value="Food & Beverage">Food & Beverage</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Legal">Legal</option>
+                                <option value="Non-profit/Social">Non-Profit/Social</option>
+                                <option value="Supply Chain">Supply Chain</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Tourism">Tourism</option>
+                                <option value="Wellness">Wellness</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <br />
 
-                        <label htmlFor="company-description-text">Description</label>
-                        <textarea name="description" id="company-description-text" value={this.state.description} onChange={this.handleChange} required />
-                        <br />
+                            <label htmlFor="company-description-text">Description</label>
+                            <textarea name="description" id="company-description-text" value={this.state.description} onChange={this.handleChange} required />
+                            <br />
 
-                        <label htmlFor="company-image-input">Image</label>
-                        <input type="text" name="image" id="company-image-input" value={this.state.image} onChange={this.handleChange} />
-                        <br />
+                            <label htmlFor="company-image-input">Image</label>
+                            <input type="text" name="image" id="company-image-input" value={this.state.image} onChange={this.handleChange} />
+                            <br />
 
-                        <label htmlFor="company-video-input">Presentation Video</label>
-                        <input type="text" name="video" id="company-video-input" value={this.state.video} onChange={this.handleChange} />
-                        <br />
+                            <label htmlFor="company-video-input">Presentation Video</label>
+                            <input type="text" name="video" id="company-video-input" value={this.state.video} onChange={this.handleChange} />
+                            <br />
 
-                        <label htmlFor="company-need-category-select">Help Category</label>
-                        <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange} required>
-                            <option value="none" selecteddisabledhidden="true">Select an Option</option>
-                            <option value="Admin">Admin</option>
-                            <option value="Finance">Finance</option>
-                            <option value="Networking">Networking</option>
-                            <option value="Marketing">Marketing</option>
-                            <option value="Mentoring">Mentoring</option>
-                            <option value="Sales">Sales</option>
-                            <option value="Technology">Technology</option>
-                        </select>
-                        <br />
+                            <label htmlFor="company-need-category-select">Help Category</label>
+                            <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange} required>
+                                <option value="none" selecteddisabledhidden="true">Select an Option</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Networking">Networking</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Mentoring">Mentoring</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Technology">Technology</option>
+                            </select>
+                            <br />
 
-                        <label htmlFor="company-need-input">In a few words, how the community can help you?</label>
-                        <textarea name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} required />
-                        <br />
+                            <label htmlFor="company-need-input">In a few words, how the community can help you?</label>
+                            <textarea name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} required />
+                            <br />
 
-                        <input type="submit" value="Submit" id="company-form-btn" />
-                    </form>
+                            <input type="submit" value="Submit" id="company-form-btn" />
+                        </form>
+
+                    </div>
                 }
             </div>
         )
