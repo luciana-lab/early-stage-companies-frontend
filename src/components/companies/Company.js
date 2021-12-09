@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeCompany } from '../../actions/companiesActions';
+import { deleteContribution } from '../../actions/contributionsActions';
 import ContributionForm from '../contributions/ContributionForm';
 import { Link, Redirect } from 'react-router-dom';
 import '../../style/Company.css';
@@ -112,7 +113,10 @@ class Company extends Component {
                                         </Link>
                                         {(((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === (this.company && this.company.user.id))) ||
                                             ((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === contribution.user.id))) ?
-                                            <p>{contribution.content}</p>
+                                            <div>
+                                                <p>{contribution.content}</p>
+                                                <button onClick={() => this.props.deleteContribution(contribution)}>X</button>
+                                            </div>
                                             : null}
                                     </div>
                                 )
@@ -125,4 +129,4 @@ class Company extends Component {
     }
 }
 
-export default connect(null, { removeCompany })(Company);
+export default connect(null, { removeCompany, deleteContribution })(Company);

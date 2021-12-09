@@ -1,4 +1,4 @@
-import { ADD_CONTRIBUTION, GET_CONTRIBUTIONS } from "./constants";
+import { ADD_CONTRIBUTION, DELETE_CONTRIBUTION, GET_CONTRIBUTIONS } from "./constants";
 
 export function fetchContributions() {
     return dispatch => {
@@ -19,12 +19,20 @@ export function addContribution(contribution) {
             body: JSON.stringify(contribution)
         })
             .then(resp => resp.json())
+            .then(data => dispatch({ type: ADD_CONTRIBUTION, payload: data }))
+    }
+}
+
+export function deleteContribution(contribution) {
+    return dispatch => {
+        fetch(`/contributions/${contribution.id}`, {
+            method: "DELETE"
+        })
+            .then(resp => resp.json())
             .then(data => {
                 console.log(data)
-                // debugger
-                dispatch({ type: ADD_CONTRIBUTION, payload: data })
+                dispatch({ type: DELETE_CONTRIBUTION, payload: data })
             })
-
     }
 }
 

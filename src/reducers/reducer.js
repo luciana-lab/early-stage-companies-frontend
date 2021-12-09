@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COMPANY_CONTRIBUTION, ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS, LOGIN, LOGOUT, DELETE_CONTRIBUTION } from '../actions/constants';
+import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS, LOGIN, LOGOUT, DELETE_CONTRIBUTION } from '../actions/constants';
 
 const rootReducer = combineReducers({
     users: usersReducer,
@@ -48,7 +48,18 @@ function companiesReducer(state = [], action) {
             ]
 
         case DELETE_CONTRIBUTION:
+            let contributionIndex;
+            for (let i = 0; i < state.length; i++) {
+                if (state[i].contributions.find(contribution => contribution.id === action.payload)) {
+                    contributionIndex = i;
+                }
+            }
 
+            const contributions = state[contributionIndex].contributions.filter(contribution => contribution.id !== action.payload)
+            return [...state.slice(0, contributionIndex),
+            { ...state[contributionIndex], contributions: contributions },
+            ...state.slice(contributionIndex + 1)
+            ]
 
         default:
             return state
