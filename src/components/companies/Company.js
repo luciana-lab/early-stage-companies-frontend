@@ -35,7 +35,7 @@ class Company extends Component {
 
     contributionForm = () => {
         if (this.state.contributionBtn === true) {
-            return <ContributionForm companyId={this.company.id} />
+            return <ContributionForm companyId={this.company.id} routerProps={this.props.routerProps} />
         } else if (this.state.contributionBtn === false) {
             return <Redirect to="/signin" />
         }

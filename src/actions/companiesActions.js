@@ -4,7 +4,10 @@ export function fetchCompanies() {
     return dispatch => {
         fetch("/companies")
             .then(resp => resp.json())
-            .then(data => dispatch({ type: GET_COMPANIES, payload: data }))
+            .then(data => {
+                // console.log("companies fetch", data)
+                dispatch({ type: GET_COMPANIES, payload: data })
+            })
     }
 }
 
@@ -48,3 +51,21 @@ export function removeCompany(id) {
 
     }
 }
+
+// export function addCompanyContribution(company) {
+//     return dispatch => {
+//         fetch(`/companies/${company.id}`, {
+//             method: "PATCH",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 Accept: "application/json"
+//             },
+//             body: JSON.stringify({ ...company })
+//         })
+//             .then(resp => resp.json())
+//             .then(data => {
+//                 console.log(data)
+//                 dispatch({ type: ADD_COMPANY_CONTRIBUTION, payload: data })
+//             })
+//     }
+// }

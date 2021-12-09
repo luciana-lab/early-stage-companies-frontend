@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router';
+// import { Redirect } from 'react-router';
 import { editCompany } from '../../actions/companiesActions';
 import '../../style/CompanyForm.css';
 import Login from '../users/Login';
@@ -8,8 +8,6 @@ import Login from '../users/Login';
 class CompanyEditForm extends Component {
     constructor(props) {
         super(props)
-
-        // debugger
 
         this.company = props.companies.find(c => c.id === parseInt(this.props.routerProps.match.params.id))
 
@@ -33,7 +31,6 @@ class CompanyEditForm extends Component {
         e.preventDefault()
         this.props.dispatchEditCompany({ ...this.state, id: this.company.id })
         this.props.routerProps.history.push(`/companies/${parseInt(this.props.routerProps.match.params.id)}`)
-        // this.setState({ content: "" })
     }
 
     render() {

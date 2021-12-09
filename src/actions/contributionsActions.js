@@ -1,4 +1,4 @@
-import { ADD_CONTRIBUTION, GET_CONTRIBUTIONS } from "./constants";
+import { ADD_COMPANY_CONTRIBUTION, GET_CONTRIBUTIONS } from "./constants";
 
 export function fetchContributions() {
     return dispatch => {
@@ -8,7 +8,7 @@ export function fetchContributions() {
     }
 }
 
-export function addContribution(contribution) {
+export function addCompanyContribution(contribution) {
     return dispatch => {
         fetch("/contributions", {
             method: "POST",
@@ -19,6 +19,26 @@ export function addContribution(contribution) {
             body: JSON.stringify(contribution)
         })
             .then(resp => resp.json())
-            .then(data => dispatch({ type: ADD_CONTRIBUTION, payload: data }))
+            .then(data => {
+                console.log(data)
+                // debugger
+                dispatch({ type: ADD_COMPANY_CONTRIBUTION, payload: data })
+            })
+
     }
 }
+
+// export function addContribution(contribution) {
+//     return dispatch => {
+//         fetch("/contributions", {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 Accept: "application/json"
+//             },
+//             body: JSON.stringify(contribution)
+//         })
+//             .then(resp => resp.json())
+//             .then(data => dispatch({ type: ADD_CONTRIBUTION, payload: data }))
+//     }
+// }
