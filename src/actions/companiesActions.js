@@ -4,10 +4,7 @@ export function fetchCompanies() {
     return dispatch => {
         fetch("/companies")
             .then(resp => resp.json())
-            .then(data => {
-                // console.log("companies fetch", data)
-                dispatch({ type: GET_COMPANIES, payload: data })
-            })
+            .then(data => dispatch({ type: GET_COMPANIES, payload: data }))
     }
 }
 
@@ -47,11 +44,6 @@ export function removeCompany(company) {
             method: "DELETE"
         })
             .then(resp => resp.json())
-            .then(data => {
-                console.log("removeCompany dispatch", data)
-                // debugger
-                dispatch({ type: DELETE_COMPANY, payload: data })
-            })
-
+            .then(data => dispatch({ type: DELETE_COMPANY, payload: data }))
     }
 }

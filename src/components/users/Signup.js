@@ -24,7 +24,6 @@ class Signup extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.dispatchSignup(this.state)
-        // this.props.routerProps.history.push("/companies")
         this.props.routerProps.history.push("/companies")
     }
 

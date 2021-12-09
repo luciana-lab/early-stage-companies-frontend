@@ -26,7 +26,6 @@ class Company extends Component {
     }
 
     handleContributionClick = () => {
-        // console.log(this.props.userLoggedIn.logged_in)
         if (this.props.userLoggedIn.logged_in === true) {
             this.setState({ contributionBtn: true })
         } else {
@@ -42,16 +41,16 @@ class Company extends Component {
         }
     }
 
-    // displayButtons = () => {
-    //     if (this.props.userLoggedIn.logged_in === true && this.props.userLoggedIn.user.id === (this.company && this.company.user.id)) {
-    //         return (
-    //             <div>
-    //                 <button id="company-edit-btn" onClick={this.handleEditCompany}>Edit Company</button>
-    //                 <button id="company-delete-btn" onClick={this.handleDeleteCompany}>Delete Company</button>
-    //             </div>
-    //         )
-    //     }
-    // }
+    displayButtons = () => {
+        if (this.props.userLoggedIn.logged_in === true && this.props.userLoggedIn.user.id === (this.company && this.company.user.id)) {
+            return (
+                <div>
+                    <button id="company-edit-btn" onClick={this.handleEditCompany}>Edit Company</button>
+                    <button id="company-delete-btn" onClick={this.handleDeleteCompany}>Delete Company</button>
+                </div>
+            )
+        }
+    }
 
     render() {
         return (
@@ -69,14 +68,7 @@ class Company extends Component {
                                 </div>
                                 <p id="company-industry">Industry: <b>{this.company && this.company.industry}</b></p>
                                 <p id="company-description" style={{ whiteSpace: "pre-wrap" }}>{this.company && this.company.description}</p>
-                                {this.props.userLoggedIn.logged_in === true && this.props.userLoggedIn.user.id === (this.company && this.company.user.id) ?
-                                    <div>
-                                        <button onClick={this.handleEditCompany} id="company-edit-btn">Edit Company</button>
-                                        <button onClick={this.handleDeleteCompany} id="company-delete-btn">Delete Company</button>
-                                    </div>
-                                    : null}
-
-                                {/* {this.displayButtons()} */}
+                                {this.displayButtons()}
 
                             </div>
                         </div>

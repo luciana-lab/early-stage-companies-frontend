@@ -15,7 +15,8 @@ export function signup(user) {
         )
             .then(resp => resp.json())
             .then(data => {
-                if (data.status === "created") {
+                // debugger
+                if (data.status === "create") {
                     dispatch({ type: LOGIN, payload: data })
                 }
             })
@@ -68,7 +69,7 @@ export function loginStatus() {
             .then(resp => resp.json())
             .then(data => {
                 console.log("data?", data)
-                if (data.logged_in || data.status === "created") {
+                if (data.logged_in || data.status === "create") {
                     dispatch({ type: LOGIN, payload: data })
                 } else {
                     dispatch({ type: LOGOUT, payload: data })

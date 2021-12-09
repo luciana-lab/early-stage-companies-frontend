@@ -8,7 +8,6 @@ const User = ({ companies, routerProps }) => {
     companies.filter(company => {
         return company.contributions.filter(contribution => {
             if (contribution.user.id === filter) {
-                // debugger
                 return userFound = contribution.user
             }
             return null;

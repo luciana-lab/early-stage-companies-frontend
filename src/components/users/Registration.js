@@ -1,14 +1,15 @@
 import React, { Component } from "react";
-import Signup from "./Signup";
+// import Signup from "./Signup";
 // import Login from "./Login";
 // import Logout from "./Logout";
 
+//TODO delele this
 class Registration extends Component {
     render() {
         return (
             <div>
                 {/* <Login routerProps={this.props.routerProps} userStatus={this.props.user} /> */}
-                <Signup routerProps={this.props.routerProps} userStatus={this.props.user} />
+                {/* <Signup routerProps={this.props.routerProps} userStatus={this.props.user} /> */}
                 {/* <Logout handleSuccessfulAuth={this.handleSuccessfulAuth} routerProps={this.props.routerProps} userStatus={this.props.user} /> */}
             </div>
         )
