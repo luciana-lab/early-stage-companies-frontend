@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Redirect } from 'react-router';
-// import { addContribution } from '../../actions/contributionsActions';
 import { addContribution } from '../../actions/contributionsActions';
 import '../../style/ContributionForm.css';
 

@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS, LOGIN, LOGOUT, DELETE_CONTRIBUTION } from '../actions/constants';
+import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, LOGIN, LOGOUT, DELETE_CONTRIBUTION } from '../actions/constants';
 
 const rootReducer = combineReducers({
     users: usersReducer,
     companies: companiesReducer
-    // contributions: contributionsReducer
 })
 
 export default rootReducer;
@@ -65,13 +64,3 @@ function companiesReducer(state = [], action) {
             return state
     }
 }
-
-// function contributionsReducer(state = [], action) {
-//     switch (action.type) {
-//         case GET_CONTRIBUTIONS:
-//             return action.payload
-
-//         default:
-//             return state
-//     }
-// }
