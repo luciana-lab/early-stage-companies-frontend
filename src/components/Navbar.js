@@ -13,14 +13,14 @@ class Navbar extends Component {
         return (
             <div className="navbar">
                 <nav>
-                    <ul>
-                        <li><div id="logo"><img src={logo} className="img-responsive main-image" alt="logo" /></div></li>
-                        <li><NavLink exact to="/">HOME</NavLink></li>
-                        <li><NavLink exact to="/companies">PROJECTS</NavLink></li>
-                        <li><NavLink exact to="/companies/new">START A PROJECT</NavLink></li>
+                    <ul id="navbar-ul">
+                        <li id="navbar-li-logo"><div id="dripper-logo"><img src={logo} className="img-responsive main-image" alt="logo" /></div></li>
+                        <li id="navbar-li-home"><NavLink exact to="/">HOME</NavLink></li>
+                        <li id="navbar-li-projects"><NavLink exact to="/companies">PROJECTS</NavLink></li>
+                        <li id="navbar-li-start-project"><NavLink exact to="/companies/new">START A PROJECT</NavLink></li>
                         {this.props.userLoggedIn.logged_in ?
-                            <li><button onClick={() => this.props.logout(this.state)}>LOGOUT</button></li>
-                            : <li><NavLink exact to="/signin">SIGN IN</NavLink></li>
+                            <li id="navbar-li-logout"><button onClick={() => this.props.logout(this.state)} id="navbar-logout-btn">LOGOUT</button></li>
+                            : <li id="navbar-li-signin"><NavLink exact to="/signin">SIGN IN</NavLink></li>
                         }
 
                     </ul>

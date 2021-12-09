@@ -9,37 +9,19 @@ body {
 }
 
 /* Create two unequal columns that floats next to each other */
-/* Left column */
-.company-leftcolumn {   
-    float: left;
-    width: 75%;
-}
-  
-/* Right column */
-.company-rightcolumn {
-    float: left;
-    width: 25%;
-    background-color: #f1f1f1;
-    padding-left: 20px;
-}
-  
-/* User avatar */
-.company-user-avatar {
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
 
-/* Add a card effect for articles */
-.card,
-.card-about-me {
+/* BOTH SIDES */
+
+/* White Background */
+.left-card,
+.right-card-drip,
+.right-card-about-me,
+.right-card-contributions {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
 }
-  
+
 /* Clear floats after the columns */
 .company-row:after {
     content: "";
@@ -47,22 +29,42 @@ body {
     clear: both;
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-    .company-leftcolumn, .company-rightcolumn {   
-      width: 100%;
-      padding: 0;
-    }
+/* hr */
+.company-leftcolumn .left-card hr,
+.company-rightcolumn .right-card-drip hr,
+.company-rightcolumn .right-card-about-me hr,
+.company-rightcolumn .right-card-contributions hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
 }
 
-.video-responsive {
+
+
+.company-leftcolumn .left-card #company-industry,
+.company-rightcolumn .right-card-drip #company-help-category {
+    font-size: 15px;
+}
+
+/* LEFT COLUMN */
+.company-leftcolumn {   
+    float: left;
+    width: 75%;
+}
+
+.company-leftcolumn .left-card #company-name-h2 {
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.company-video-responsive {
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
     height: 0;
 }
   
-.video-responsive iframe {
+.company-video-responsive iframe {
     left: 0;
     top: 0;
     height: 100%;
@@ -70,27 +72,8 @@ body {
     position: absolute;
 }
 
-#contributions-length h2,
-#contributions-length p {
-    display: inline;
-}
-
-#contributions-length {
-    text-align: center;
-}
-
-#contributions-btn button {
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-    background-color: #fe5e1d;
-    color: white;
-    font-weight: bold;
-    letter-spacing: .02rem;
-    text-transform: uppercase;
+.company-leftcolumn .left-card #company-description {
+    text-align: justify;
 }
 
 #company-edit-btn {
@@ -129,40 +112,64 @@ body {
     opacity: 1;
 }
 
-/* Company hr */
-.company-leftcolumn .card hr,
-.company-rightcolumn .card hr,
-.company-rightcolumn .card-about-me hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
+  
+/* RIGHT COLUMN */
+.company-rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
 }
 
-.company-leftcolumn .card h2,
-.company-rightcolumn .card h4,
-.card-about-me {
+/* RIGHT SIDE - DRIP PROJECT */
+#contributions-length #contributions-number-h2,
+#contributions-length #contributions-number-p1,
+#contributions-length #contributions-number-p2 {
+    display: inline;
+}
+
+#contributions-length {
+    text-align: center;
+}
+
+#contributions-btn #add-contribution-btn {
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    background-color: #fe5e1d;
+    color: white;
+    font-weight: bold;
+    letter-spacing: .02rem;
+    text-transform: uppercase;
+}
+
+/* RIGHT COLUMN - ABOUT ME */
+.company-rightcolumn .right-card-about-me {
     text-align: center;
     color: black;
 }
 
-.company-leftcolumn .card #company-industry,
-.company-rightcolumn .card #company-help-category {
-    font-size: 15px;
+/* User avatar */
+.company-user-avatar {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.company-leftcolumn .card #company-description {
-    text-align: justify;
-}
-
-#company-user-owner-name h4 {
+.company-rightcolumn .right-card-about-me #company-user-owner-name #company-user-owner-first-name,
+.company-rightcolumn .right-card-about-me #company-user-owner-name #company-user-owner-last-name {
     display: inline-block;
     padding: 3px;
+    text-transform: uppercase;
+    color: black;
 }
 
-.company-leftcolumn .card #company-user-owner-nam {
-    text-align: center;
-}
-
-/* Contributions Content */
+/* RIGHT COLUMN - Contributions Content */
 .companies-contributions-content #companies-contribution-name-p, 
 .companies-contributions-content #contribution-delete-btn {
     display: inline-block;
@@ -175,7 +182,6 @@ body {
     margin-right: 3px;
     word-break: break-all;
     overflow: hidden;
-    /* text-overflow: ellipsis; */
 }
 
 .companies-contributions-content #contribution-delete-btn {
@@ -193,8 +199,27 @@ body {
     background: whitesmoke;
 }
 
-/* .companies-contributions-content button:before,  */
-/* .companies-contributions-content button:after { */
-    /* position: absolute; */
-    /* background-color: #333;
-} */
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .company-leftcolumn, .company-rightcolumn {   
+      width: 100%;
+      padding: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

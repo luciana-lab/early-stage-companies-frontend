@@ -58,13 +58,13 @@ class Company extends Component {
             <div>
                 <div className="company-row">
                     <div className="company-leftcolumn">
-                        <div className="card">
+                        <div className="left-card">
                             <div key={this.company && this.company.id}>
                                 <Link to={{ pathname: `${this.company && this.company.website}` }} target="_blank">
-                                    <h2>{this.company && this.company.name.toUpperCase()}</h2>
+                                    <h2 id="company-name-h2">{this.company && this.company.name}</h2>
                                 </Link>
                                 <hr />
-                                <div className="video-responsive">
+                                <div className="company-video-responsive">
                                     <iframe src={`${this.company && this.company.video}`} title="video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                                 </div>
                                 <p id="company-industry">Industry: <b>{this.company && this.company.industry}</b></p>
@@ -76,33 +76,33 @@ class Company extends Component {
                         </div>
                     </div>
                     <div className="company-rightcolumn">
-                        <div className="card">
-                            <h4>DRIP PROJECT</h4>
+                        <div className="right-card-drip">
+                            <h4 id="company-drip-h4">DRIP PROJECT</h4>
                             <hr />
                             <p id="company-help-category">Help in {this.company && this.company.need_category}</p>
                             <p>{this.company && this.company.need}</p>
                             <div id="contributions-length">
-                                <h2>{this.company && this.company.contributions.length} </h2>
-                                {this.company && this.company.contributions.length <= 1 ? <p>contribution</p> : <p>contributions</p>}
+                                <h2 id="contributions-number-h2">{this.company && this.company.contributions.length} </h2>
+                                {this.company && this.company.contributions.length <= 1 ? <p id="contributions-number-p1">contribution</p> : <p id="contributions-number-p2">contributions</p>}
                             </div>
                             <div id="contributions-btn">
-                                <button onClick={this.handleContributionClick}>Give me a shot &#9749;</button>
+                                <button onClick={this.handleContributionClick} id="add-contribution-btn">Give me a shot &#9749;</button>
                             </div>
                             {this.contributionForm()}
                         </div>
-                        <div className="card-about-me">
+                        <div className="right-card-about-me">
                             {/* <div className="userimg" src={this.company && this.company.user.image}></div> */}
                             <Link to={`/users/${this.company && this.company.user.id}`}>
                                 <img src={`${(this.company && this.company.user.image) ? this.company.user.image : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"}`} alt="user profile" className="company-user-avatar" />
                                 <div id="company-user-owner-name">
-                                    <h4>{this.company && this.company.user.first_name.toUpperCase()}</h4>
-                                    <h4>{this.company && this.company.user.last_name.toUpperCase()}</h4>
+                                    <h4 id="company-user-owner-first-name">{this.company && this.company.user.first_name}</h4>
+                                    <h4 id="company-user-owner-last-name">{this.company && this.company.user.last_name}</h4>
                                 </div>
                             </Link>
                             <hr />
                             <p>{this.company && this.company.user.about}</p>
                         </div>
-                        <div className="card">
+                        <div className="right-card-contributions">
                             <h4>CONTRIBUTORS</h4>
                             <hr />
                             {this.company && this.company.contributions.map(contribution => {

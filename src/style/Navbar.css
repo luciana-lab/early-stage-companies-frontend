@@ -1,4 +1,4 @@
-.navbar nav ul {
+.navbar nav #navbar-ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -6,41 +6,66 @@
   background-color: #50473e;
 }
   
-.navbar nav li {
+.navbar nav #navbar-li-logo,
+.navbar nav #navbar-li-home,
+.navbar nav #navbar-li-projects,
+.navbar nav #navbar-li-logo, 
+.navbar nav #navbar-li-start-project,
+.navbar nav #navbar-li-logout,
+.navbar nav #navbar-li-signin {
   float: left;
 }
   
-.navbar nav li a {
+.navbar nav #navbar-li-logo a,
+.navbar nav #navbar-li-home a,
+.navbar nav #navbar-li-projects a,
+.navbar nav #navbar-li-logo a, 
+.navbar nav #navbar-li-start-project a,
+.navbar nav #navbar-li-logout a,
+.navbar nav #navbar-li-signin a {
   display: block;
   color: white;
   text-align: center;
   padding: 18px 20px;
   text-decoration: none;
 }
-  
-.navbar nav li a:hover:not(.active),
-.navbar nav li button:hover {
+
+.navbar nav #navbar-li-logo a:hover:not(.active),
+.navbar nav #navbar-li-home a:hover:not(.active),
+.navbar nav #navbar-li-projects a:hover:not(.active),
+.navbar nav #navbar-li-logo a:hover:not(.active), 
+.navbar nav #navbar-li-start-project a:hover:not(.active),
+.navbar nav #navbar-logout-btn:hover:not(.active),
+.navbar nav #navbar-li-logout a:hover:not(.active),
+.navbar nav #navbar-li-signin a:hover:not(.active) {
   background-color: #342a19;
 }
-  
-.navbar nav .active {
+
+.navbar nav #navbar-li-logo .active,
+.navbar nav #navbar-li-home .active,
+.navbar nav #navbar-li-projects .active,
+.navbar nav #navbar-li-logo .active, 
+.navbar nav #navbar-li-start-project .active,
+.navbar nav #navbar-logout-btn .active,
+.navbar nav #navbar-li-logout .active,
+.navbar nav #navbar-li-signin .active {
   border-bottom: #fe5e1d solid;
 }
 
-.navbar nav #logo {
+.navbar nav #navbar-li-logo #dripper-logo {
   width: 65%;
   padding: 1%;
   padding-left: 10%;
   height: auto;
 }
   
-.navbar nav #logo img {
+.navbar nav #navbar-li-logo #dripper-logo img {
   width: 65%;
   height: auto;
 }
 
 /* logout button */
-.navbar nav li button {
+.navbar nav #navbar-li-logout #navbar-logout-btn {
   display: block;
   background-color: transparent;
   background-repeat: no-repeat;
