@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("from App", this.props.users)
     return (
       <div className="App">
         <Navbar userLoggedIn={this.props.users ? this.props.users : null} />

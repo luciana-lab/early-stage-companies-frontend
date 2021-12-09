@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { Redirect } from 'react-router';
 import { editCompany } from '../../actions/companiesActions';
 import '../../style/CompanyForm.css';
 import Login from '../users/Login';

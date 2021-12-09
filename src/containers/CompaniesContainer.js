@@ -9,7 +9,6 @@ class CompaniesContainer extends Component {
     }
 
     render() {
-        // console.log("user?", this.props.userLoggedIn)
         return (
             <div>
                 <Pages companies={this.props.companies} userLoggedIn={this.props.userLoggedIn} />
@@ -30,6 +29,5 @@ const mapDispatchToProps = dispatch => {
         fetchCompanies: () => dispatch(fetchCompanies())
     }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(CompaniesContainer);

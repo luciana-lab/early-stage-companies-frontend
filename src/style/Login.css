@@ -47,7 +47,7 @@
 
 .signup-container input[type=text]:focus,
 .signup-container input[type=email]:focus, 
-.signup-container iinput[type=password]:focus {
+.signup-container input[type=password]:focus {
     background-color: #ddd;
     outline: none;
 }

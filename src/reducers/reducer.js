@@ -4,8 +4,8 @@ import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPAN
 
 const rootReducer = combineReducers({
     users: usersReducer,
-    companies: companiesReducer,
-    contributions: contributionsReducer
+    companies: companiesReducer
+    // contributions: contributionsReducer
 })
 
 export default rootReducer;
@@ -66,12 +66,12 @@ function companiesReducer(state = [], action) {
     }
 }
 
-function contributionsReducer(state = [], action) {
-    switch (action.type) {
-        case GET_CONTRIBUTIONS:
-            return action.payload
+// function contributionsReducer(state = [], action) {
+//     switch (action.type) {
+//         case GET_CONTRIBUTIONS:
+//             return action.payload
 
-        default:
-            return state
-    }
-}
+//         default:
+//             return state
+//     }
+// }

@@ -35,7 +35,7 @@ class CompanyForm extends Component {
                         <hr />
                         <form onSubmit={this.handleSubmit}>
                             <label htmlFor="company-name-input">Company Name</label>
-                            <input type="text" name="name" id="company-name-input" value={this.state.name} onChange={this.handleChange} required />
+                            <input type="text" name="name" id="company-name-input" value={this.state.name} onChange={this.handleChange} placeholder="(required)" required />
                             <br />
 
                             <label htmlFor="company-website-input">Website</label>
@@ -43,7 +43,7 @@ class CompanyForm extends Component {
                             <br />
 
                             <label htmlFor="company-industry-select">Industry</label>
-                            <select name="industry" id="company-industry-select" value={this.state.industry} onChange={this.handleChange} required>
+                            <select name="industry" id="company-industry-select" value={this.state.industry} onChange={this.handleChange}>
                                 <option value="none" selecteddisabledhidden="true">Select an Option</option>
                                 <option value="Agriculture">Agriculture</option>
                                 <option value="Arts">Arts</option>
@@ -67,7 +67,7 @@ class CompanyForm extends Component {
                             <br />
 
                             <label htmlFor="company-description-text">Description</label>
-                            <textarea name="description" id="company-description-text" value={this.state.description} onChange={this.handleChange} required />
+                            <textarea name="description" id="company-description-text" value={this.state.description} onChange={this.handleChange} placeholder="(required)" required />
                             <br />
 
                             <label htmlFor="company-image-input">Image</label>
@@ -75,11 +75,11 @@ class CompanyForm extends Component {
                             <br />
 
                             <label htmlFor="company-video-input">Presentation Video</label>
-                            <input type="text" name="video" id="company-video-input" value={this.state.video} onChange={this.handleChange} />
+                            <input type="text" name="video" id="company-video-input" value={this.state.video} onChange={this.handleChange} placeholder="e.g. https://www.youtube.com/embed/dNDQ5BaY_04" />
                             <br />
 
                             <label htmlFor="company-need-category-select">Help Category</label>
-                            <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange} required>
+                            <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange}>
                                 <option value="none" selecteddisabledhidden="true">Select an Option</option>
                                 <option value="Admin">Admin</option>
                                 <option value="Finance">Finance</option>
@@ -91,7 +91,7 @@ class CompanyForm extends Component {
                             <br />
 
                             <label htmlFor="company-need-input">In a few words, how the community can help you?</label>
-                            <textarea name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} required />
+                            <textarea name="need" id="company-need-input" value={this.state.need} onChange={this.handleChange} placeholder="(required)" required />
                             <br />
 
                             <input type="submit" value="Submit" id="company-form-btn" />

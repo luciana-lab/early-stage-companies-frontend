@@ -11,8 +11,6 @@ import Home from './Home';
 // import Footer from "./Footer";
 
 function Pages({ companies, userLoggedIn }) {
-    console.log("from Pages", userLoggedIn)
-
     return (
         <div>
             <Switch>
@@ -31,5 +29,3 @@ function Pages({ companies, userLoggedIn }) {
 }
 
 export default Pages;
-
-// To nested routes: /users/:userId/companies/:id

@@ -38,8 +38,6 @@ body {
     margin-bottom: 25px;
 }
 
-
-
 .company-leftcolumn .left-card #company-industry,
 .company-rightcolumn .right-card-drip #company-help-category {
     font-size: 15px;
@@ -152,7 +150,7 @@ body {
     color: black;
 }
 
-/* User avatar */
+/* RIGHT COLUMN - About Me - User avatar */
 .company-user-avatar {
     display: inline-block;
     width: 100px;
@@ -179,7 +177,6 @@ body {
 
 .companies-contributions-content #companies-contribution-name-p {
     margin-right: 3px;
-    /* margin-bottom: 10%; */
     margin-top: 3%;
     word-break: break-all;
     overflow: hidden;
@@ -187,14 +184,10 @@ body {
 
 .companies-contributions-content #contribution-content-p {
     margin-top: -8%;
-    /* margin-bottom: 10px; */
 }
 
 .companies-contributions-content #contribution-delete-btn {
     cursor: pointer;
-    /* position: absolute; */
-    /* top: 50%; */
-    /* right: 0%; */
     transform: translate(0%, -200%);
     background-color: transparent;
     border: none;
