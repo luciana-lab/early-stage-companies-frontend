@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { Redirect } from 'react-router';
 // import { addContribution } from '../../actions/contributionsActions';
-import { addCompanyContribution } from '../../actions/contributionsActions';
+import { addContribution } from '../../actions/contributionsActions';
 import '../../style/ContributionForm.css';
 
 class ContributionForm extends Component {
@@ -35,7 +35,7 @@ class ContributionForm extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         // dispatchAddContribution: contribution => dispatch(addContribution(contribution))
-        dispatchAddContribution: contribution => dispatch(addCompanyContribution(contribution))
+        dispatchAddContribution: contribution => dispatch(addContribution(contribution))
     }
 }
 

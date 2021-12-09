@@ -1,4 +1,4 @@
-import { ADD_COMPANY_CONTRIBUTION, GET_CONTRIBUTIONS } from "./constants";
+import { ADD_CONTRIBUTION, GET_CONTRIBUTIONS } from "./constants";
 
 export function fetchContributions() {
     return dispatch => {
@@ -8,7 +8,7 @@ export function fetchContributions() {
     }
 }
 
-export function addCompanyContribution(contribution) {
+export function addContribution(contribution) {
     return dispatch => {
         fetch("/contributions", {
             method: "POST",
@@ -22,7 +22,7 @@ export function addCompanyContribution(contribution) {
             .then(data => {
                 console.log(data)
                 // debugger
-                dispatch({ type: ADD_COMPANY_CONTRIBUTION, payload: data })
+                dispatch({ type: ADD_CONTRIBUTION, payload: data })
             })
 
     }

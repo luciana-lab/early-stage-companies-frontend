@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import { ADD_COMPANY_CONTRIBUTION, ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS, LOGIN, LOGOUT } from '../actions/constants';
+import { ADD_COMPANY_CONTRIBUTION, ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, GET_CONTRIBUTIONS, LOGIN, LOGOUT, DELETE_CONTRIBUTION } from '../actions/constants';
 
 const rootReducer = combineReducers({
     users: usersReducer,
@@ -39,15 +39,16 @@ function companiesReducer(state = [], action) {
             const companies = state.filter(company => company.id !== action.payload)
             return companies
 
-        case ADD_COMPANY_CONTRIBUTION:
+        case ADD_CONTRIBUTION:
             const companyIdContribution = state.findIndex(company => company.id === action.payload.company_id)
             const theCompany = state.find(company => company.id === action.payload.company_id)
-            // debugger
-            // return [...state, companyIdContribution.contributions.concat(action.payload)]
             return [...state.slice(0, companyIdContribution),
             { ...state[companyIdContribution], contributions: theCompany.contributions.concat(action.payload) },
             ...state.slice(companyIdContribution + 1)
             ]
+
+        case DELETE_CONTRIBUTION:
+
 
         default:
             return state
@@ -59,8 +60,8 @@ function contributionsReducer(state = [], action) {
         case GET_CONTRIBUTIONS:
             return action.payload
 
-        case ADD_CONTRIBUTION:
-            return [...state, action.payload]
+        // case ADD_CONTRIBUTION:
+        //     return [...state, action.payload]
 
         default:
             return state
