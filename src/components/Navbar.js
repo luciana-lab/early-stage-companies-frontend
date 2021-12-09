@@ -9,7 +9,9 @@ class Navbar extends Component {
     state = {
         user: {}
     }
+
     render() {
+        console.log("from Navbar", this.props.userLoggedIn)
         return (
             <div className="navbar">
                 <nav>

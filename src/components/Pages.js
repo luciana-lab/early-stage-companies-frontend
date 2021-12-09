@@ -11,7 +11,7 @@ import Home from './Home';
 // import Footer from "./Footer";
 
 function Pages({ companies, userLoggedIn }) {
-    // console.log(loggedInStatus)
+    console.log("from Pages", userLoggedIn)
 
     return (
         <div>

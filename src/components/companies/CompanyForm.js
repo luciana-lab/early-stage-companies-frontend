@@ -13,7 +13,7 @@ class CompanyForm extends Component {
         website: "",
         video: "",
         need_category: "",
-        need: "",
+        need: ""
     }
 
     handleChange = e => {

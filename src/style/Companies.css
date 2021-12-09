@@ -63,6 +63,7 @@ body {
     word-break: break-all;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-transform: uppercase;
 }
 
 #p-help-category, #p-industry {

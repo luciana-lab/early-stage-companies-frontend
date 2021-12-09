@@ -54,8 +54,8 @@ function companiesReducer(state = [], action) {
                     contributionIndex = i;
                 }
             }
-
             const contributions = state[contributionIndex].contributions.filter(contribution => contribution.id !== action.payload)
+
             return [...state.slice(0, contributionIndex),
             { ...state[contributionIndex], contributions: contributions },
             ...state.slice(contributionIndex + 1)
@@ -70,9 +70,6 @@ function contributionsReducer(state = [], action) {
     switch (action.type) {
         case GET_CONTRIBUTIONS:
             return action.payload
-
-        // case ADD_CONTRIBUTION:
-        //     return [...state, action.payload]
 
         default:
             return state

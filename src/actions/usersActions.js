@@ -67,8 +67,8 @@ export function loginStatus() {
         fetch("/logged_in", { withCredentials: true })
             .then(resp => resp.json())
             .then(data => {
-                // console.log("data?", data)
-                if (data.logged_in) {
+                console.log("data?", data)
+                if (data.logged_in || data.status === "created") {
                     dispatch({ type: LOGIN, payload: data })
                 } else {
                     dispatch({ type: LOGOUT, payload: data })

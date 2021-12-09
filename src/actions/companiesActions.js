@@ -41,31 +41,17 @@ export function editCompany(company) {
     }
 }
 
-export function removeCompany(id) {
+export function removeCompany(company) {
     return dispatch => {
-        fetch(`/companies/${id}`, {
+        fetch(`/companies/${company.id}`, {
             method: "DELETE"
         })
             .then(resp => resp.json())
-            .then(companyId => dispatch({ type: DELETE_COMPANY, payload: companyId }))
+            .then(data => {
+                console.log("removeCompany dispatch", data)
+                // debugger
+                dispatch({ type: DELETE_COMPANY, payload: data })
+            })
 
     }
 }
-
-// export function addCompanyContribution(company) {
-//     return dispatch => {
-//         fetch(`/companies/${company.id}`, {
-//             method: "PATCH",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 Accept: "application/json"
-//             },
-//             body: JSON.stringify({ ...company })
-//         })
-//             .then(resp => resp.json())
-//             .then(data => {
-//                 console.log(data)
-//                 dispatch({ type: ADD_COMPANY_CONTRIBUTION, payload: data })
-//             })
-//     }
-// }

@@ -9,7 +9,7 @@ class Login extends Component {
         email: "",
         password: "",
         // loggedInStatus: "LOGGED_IN",
-        loginErrors: ""
+        // loginErrors: ""
     }
 
     handleChange = e => {
@@ -21,8 +21,7 @@ class Login extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.dispatchLogin(this.state)
-        // this.props.routerProps.history.push("/companies")
-        this.props.routerProps.history.goBack()
+        this.props.routerProps.history.push("/companies")
 
     }
 

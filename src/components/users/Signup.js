@@ -11,8 +11,8 @@ class Signup extends Component {
         email: "",
         password: "",
         about: "",
-        image: "",
-        registrationErrors: ""
+        image: ""
+        // registrationErrors: ""
     }
 
     handleChange = e => {
@@ -24,6 +24,7 @@ class Signup extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.dispatchSignup(this.state)
+        // this.props.routerProps.history.push("/companies")
         this.props.routerProps.history.push("/companies")
     }
 
