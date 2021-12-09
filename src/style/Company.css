@@ -161,3 +161,40 @@ body {
 .company-leftcolumn .card #company-user-owner-nam {
     text-align: center;
 }
+
+/* Contributions Content */
+.companies-contributions-content #companies-contribution-name-p, 
+.companies-contributions-content #contribution-delete-btn {
+    display: inline-block;
+    padding: 1px;
+    margin-top: -15px;
+    /* margin-bottom: -10px; */
+}
+
+.companies-contributions-content #companies-contribution-name-p {
+    margin-right: 3px;
+    word-break: break-all;
+    overflow: hidden;
+    /* text-overflow: ellipsis; */
+}
+
+.companies-contributions-content #contribution-delete-btn {
+    cursor: pointer;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* right: 0%; */
+    transform: translate(0%, -200%);
+    background-color: transparent;
+    border: none;
+}
+
+.companies-contributions-content #contribution-delete-btn:hover {
+    opacity: 1;
+    background: whitesmoke;
+}
+
+/* .companies-contributions-content button:before,  */
+/* .companies-contributions-content button:after { */
+    /* position: absolute; */
+    /* background-color: #333;
+} */

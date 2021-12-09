@@ -108,14 +108,17 @@ class Company extends Component {
                             {this.company && this.company.contributions.map(contribution => {
                                 return (
                                     <div key={contribution.id}>
-                                        <Link to={`/users/${contribution.user.id}`}>
-                                            <p>{contribution.user.first_name}</p>
-                                        </Link>
+
                                         {(((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === (this.company && this.company.user.id))) ||
                                             ((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === contribution.user.id))) ?
-                                            <div>
-                                                <p>{contribution.content}</p>
-                                                <button onClick={() => this.props.deleteContribution(contribution)}>X</button>
+                                            <div className="companies-contributions-content">
+                                                <Link to={`/users/${contribution.user.id}`}>
+                                                    <p id="companies-contribution-name-p">{contribution.user.first_name}</p>
+                                                </Link>
+                                                <button onClick={() => this.props.deleteContribution(contribution)} id="contribution-delete-btn">&times;</button>
+                                                <div>
+                                                    <p>{contribution.content}</p>
+                                                </div>
                                             </div>
                                             : null}
                                     </div>
