@@ -175,13 +175,19 @@ body {
     display: inline-block;
     padding: 1px;
     margin-top: -15px;
-    /* margin-bottom: -10px; */
 }
 
 .companies-contributions-content #companies-contribution-name-p {
     margin-right: 3px;
+    /* margin-bottom: 10%; */
+    margin-top: 3%;
     word-break: break-all;
     overflow: hidden;
+}
+
+.companies-contributions-content #contribution-content-p {
+    margin-top: -8%;
+    /* margin-bottom: 10px; */
 }
 
 .companies-contributions-content #contribution-delete-btn {

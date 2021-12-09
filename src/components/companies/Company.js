@@ -114,9 +114,7 @@ class Company extends Component {
                                                     <p id="companies-contribution-name-p">{contribution.user.first_name}</p>
                                                 </Link>
                                                 <button onClick={() => this.props.deleteContribution(contribution)} id="contribution-delete-btn">&times;</button>
-                                                <div>
-                                                    <p>{contribution.content}</p>
-                                                </div>
+                                                <p id="contribution-content-p">{contribution.content}</p>
                                             </div>
                                             : null}
                                     </div>
