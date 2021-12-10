@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "engines": {
     "node": "16.x",
-    "npm": "8.x"
+    "yarn": "1.x"
   },
   "private": true,
   "dependencies": {
@@ -43,8 +43,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "web-vitals": "^2.1.2"
   }
 }
