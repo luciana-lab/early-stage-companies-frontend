@@ -11,7 +11,6 @@ const Companies = ({ companies }) => {
                     {companies.map((company, i) => {
                         if (i === companies.length - 1) {
                             return (
-
                                 <div className="companies-card-right" key={company.id}>
                                     <h2>FRESH FAVORITE</h2>
                                     <hr />

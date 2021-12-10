@@ -107,7 +107,6 @@ class Company extends Component {
                             {this.company && this.company.contributions.map(contribution => {
                                 return (
                                     <div key={contribution.id}>
-
                                         {(((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === (this.company && this.company.user.id))) ||
                                             ((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === contribution.user.id))) ?
                                             <div className="companies-contributions-content">
