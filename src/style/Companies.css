@@ -1,11 +1,3 @@
-/* * {
-    box-sizing: border-box;
-}
-  
-body {
-    margin: 0;
-} */
-
 .companies-row {
     overflow: hidden;
 }
@@ -166,7 +158,3 @@ body {
       display: none;
     } */
 }
-
-/* &::-webkit-scrollbar {
-    display: none;
-} */

@@ -1,6 +1,4 @@
-// import logo from './logo.svg';
 import React, { Component } from 'react';
-import './App.css';
 import Navbar from './components/Navbar';
 import CompaniesContainer from './containers/CompaniesContainer';
 import { loginStatus } from './actions/usersActions';

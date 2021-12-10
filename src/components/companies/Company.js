@@ -5,6 +5,7 @@ import { deleteContribution } from '../../actions/contributionsActions';
 import ContributionForm from '../contributions/ContributionForm';
 import { Link, Redirect } from 'react-router-dom';
 import '../../style/Company.css';
+import Footer from '../Footer';
 
 class Company extends Component {
     constructor(props) {
@@ -123,6 +124,7 @@ class Company extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

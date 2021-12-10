@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../style/Companies.css';
+import Footer from '../Footer';
 
 const Companies = ({ companies }) => {
     return (
@@ -55,9 +56,8 @@ const Companies = ({ companies }) => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
-
-
     )
 
 }

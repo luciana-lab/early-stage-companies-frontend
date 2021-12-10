@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/Home.css';
+import Footer from './Footer';
 
 const Home = ({ routerProps }) => {
     return (
@@ -18,7 +19,9 @@ const Home = ({ routerProps }) => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
+
     )
 }
 
