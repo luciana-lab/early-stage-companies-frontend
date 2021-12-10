@@ -62,7 +62,7 @@ Open the HTML page:
 ```
     $ npm start
 ```
-and say "yes" to use the localhost:3001 web server.
+and type "yes" to use the localhost:3001 web server.
 ## Usage
 
 To see the User API data been update go to the localhost:3000 web server.
@@ -83,7 +83,7 @@ Everyone interacting in this project's codebases, issue trackers, chat rooms and
 
 ## Extras
 [Live Project Page]()\
-[Project Walkthrough Video]()\
+[Project Walkthrough Video](https://youtu.be/xnsyZ4juSmg)\
 [Blog Post - Part I](https://luciana-lab.medium.com/rails-react-redux-thunk-user-auth-with-cookies-and-sessions-part-i-98c5ea19a8c7)\
 [Blog Post - Part II](https://luciana-lab.medium.com/rails-react-redux-thunk-user-auth-with-cookies-and-sessions-part-ii-e3f9bf036489)\
 [30 minutes video coding](https://youtu.be/aBAqAHF81WY)
