@@ -1,6 +1,7 @@
 {
   "name": "early-stage-companies-frontend",
   "version": "0.1.0",
+  "serve": "serve -s build",
   "engines": {
     "node": "16.x",
     "yarn": "1.x"
