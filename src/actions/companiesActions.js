@@ -1,8 +1,8 @@
-import { ADD_COMPANY, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES } from "./constants";
+import { BASE_URL, ADD_COMPANY, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES } from "./constants";
 
 export function fetchCompanies() {
     return dispatch => {
-        fetch("/companies")
+        fetch(`${BASE_URL}/companies`)
             .then(resp => resp.json())
             .then(data => dispatch({ type: GET_COMPANIES, payload: data }))
     }
@@ -10,7 +10,7 @@ export function fetchCompanies() {
 
 export function addCompany(company) {
     return dispatch => {
-        fetch("/companies", {
+        fetch(`${BASE_URL}/companies`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -25,7 +25,7 @@ export function addCompany(company) {
 
 export function editCompany(company) {
     return dispatch => {
-        fetch(`/companies/${company.id}`, {
+        fetch(`${BASE_URL}/companies/${company.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export function editCompany(company) {
 
 export function removeCompany(company) {
     return dispatch => {
-        fetch(`/companies/${company.id}`, {
+        fetch(`${BASE_URL}/companies/${company.id}`, {
             method: "DELETE"
         })
             .then(resp => resp.json())
