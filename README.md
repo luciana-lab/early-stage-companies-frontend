@@ -9,6 +9,8 @@ Usage:
 3. All the project information will be displayed on the individual project page where anyone (who is logged in) can add a contribution with the need asked for.
 4. The person who wrote the contribution and the project owner are the only ones who can see the contribution content and delete it. The project owner can also edit or delete the project.
 
+![til](./public/gif.gif)
+
 **User Perspective**
 
 *Who is the User?*\

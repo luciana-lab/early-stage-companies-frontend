@@ -2,7 +2,7 @@ import { ADD_CONTRIBUTION, DELETE_CONTRIBUTION } from "./constants";
 
 export function addContribution(contribution) {
     return dispatch => {
-        fetch(`/contributions`, {
+        fetch("/contributions", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

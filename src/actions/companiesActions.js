@@ -2,7 +2,7 @@ import { ADD_COMPANY, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES } from "./cons
 
 export function fetchCompanies() {
     return dispatch => {
-        fetch(`/companies`)
+        fetch("/companies")
             .then(resp => resp.json())
             .then(data => dispatch({ type: GET_COMPANIES, payload: data }))
     }
@@ -10,7 +10,7 @@ export function fetchCompanies() {
 
 export function addCompany(company) {
     return dispatch => {
-        fetch(`/companies`, {
+        fetch("/companies", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

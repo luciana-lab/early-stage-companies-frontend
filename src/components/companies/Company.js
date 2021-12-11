@@ -43,7 +43,7 @@ class Company extends Component {
     }
 
     displayButtons = () => {
-        if (this.props.userLoggedIn.logged_in === true && this.props.userLoggedIn.user.id === (this.company && this.company.user.id)) {
+        if ((this.props.userLoggedIn.logged_in === true) && (this.props.userLoggedIn.user.id === (this.company && this.company.user.id))) {
             return (
                 <div>
                     <button id="company-edit-btn" onClick={this.handleEditCompany}>Edit Company</button>
@@ -90,7 +90,6 @@ class Company extends Component {
                             {this.contributionForm()}
                         </div>
                         <div className="right-card-about-me">
-                            {/* <div className="userimg" src={this.company && this.company.user.image}></div> */}
                             <Link to={`/users/${this.company && this.company.user.id}`}>
                                 <img src={`${(this.company && this.company.user.image) ? this.company.user.image : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"}`} alt="user profile" className="company-user-avatar" />
                                 <div id="company-user-owner-name">

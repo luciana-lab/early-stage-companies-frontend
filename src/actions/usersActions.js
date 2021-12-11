@@ -2,7 +2,7 @@ import { LOGIN, LOGOUT } from "./constants";
 
 export function signup(user) {
     return dispatch => {
-        fetch(`/users`, {
+        fetch("/users", {
             method: "POST",
             headers: {
                 "Access-Control-Allow-Origins": "*",
@@ -25,7 +25,7 @@ export function signup(user) {
 
 export function login(user) {
     return dispatch => {
-        fetch(`/sessions`, {
+        fetch("/sessions", {
             method: "POST",
             headers: {
                 "Access-Control-Allow-Origin": "*",
@@ -49,7 +49,7 @@ export function login(user) {
 
 export function logout() {
     return dispatch => {
-        fetch(`/logout`, {
+        fetch("/logout", {
             method: "DELETE"
         }, { withCredentials: true })
             .then(resp => resp.json())
@@ -64,7 +64,7 @@ export function logout() {
 
 export function loginStatus() {
     return dispatch => {
-        fetch(`/logged_in`, { withCredentials: true })
+        fetch("/logged_in", { withCredentials: true })
             .then(resp => resp.json())
             .then(data => {
                 if (data.logged_in) {
