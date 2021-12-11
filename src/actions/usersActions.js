@@ -1,8 +1,8 @@
-import { BASE_URL, LOGIN, LOGOUT } from "./constants";
+import { LOGIN, LOGOUT } from "./constants";
 
 export function signup(user) {
     return dispatch => {
-        fetch(`${BASE_URL}/users`, {
+        fetch(`/users`, {
             method: "POST",
             headers: {
                 "Access-Control-Allow-Origins": "*",
@@ -25,7 +25,7 @@ export function signup(user) {
 
 export function login(user) {
     return dispatch => {
-        fetch(`${BASE_URL}/sessions`, {
+        fetch(`/sessions`, {
             method: "POST",
             headers: {
                 "Access-Control-Allow-Origin": "*",
@@ -49,7 +49,7 @@ export function login(user) {
 
 export function logout() {
     return dispatch => {
-        fetch(`${BASE_URL}/logout`, {
+        fetch(`/logout`, {
             method: "DELETE"
         }, { withCredentials: true })
             .then(resp => resp.json())
@@ -64,7 +64,7 @@ export function logout() {
 
 export function loginStatus() {
     return dispatch => {
-        fetch(`${BASE_URL}/logged_in`, { withCredentials: true })
+        fetch(`/logged_in`, { withCredentials: true })
             .then(resp => resp.json())
             .then(data => {
                 if (data.logged_in) {

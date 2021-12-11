@@ -1,7 +1,7 @@
 # Early Stage Companies Contributions
 This is the frontend of the application that the user can view and interact with it. Please, also install the [Rails frontend](https://github.com/luciana-lab/early-stage-companies-backend) and follow the installation instruction.
 
-This application was developed to help summarize the information and needs of companies/startups in their early stage beyond capital needs. It is inspired on [1 Million Cups](https://www.1millioncups.com/).\
+This application was developed to help summarize the information and needs of companies/startups in their early stage beyond capital needs. It is inspired on [1 Million Cups](https://www.1millioncups.com).\
 1 Million Cups organized a meeting every Wednesday over 163 cities in the U.S. and 2 projects are pitched in every meeting. The community gives support, feedback, and people can help them with the project needs.\
 Usage:
 1. To create a project, the user needs to create an account or log in;
@@ -60,7 +60,7 @@ In the backend terminal, start the server:
 
 Open the HTML page:
 ```
-    $ npm start
+    $ yarn start
 ```
 and type "yes" to use the localhost:3001 web server.
 ## Usage
@@ -82,7 +82,6 @@ The gem is available as open source under the terms of the [MIT License](https:/
 Everyone interacting in this project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/luciana-lab/early-stage-companies-backend/blob/main/CODE_OF_CONDUCT.md).
 
 ## Extras
-[Live Project Page](https://one-million-cups-dripper.herokuapp.com)\
 [Project Walkthrough Video](https://youtu.be/xnsyZ4juSmg)\
 [Blog Post - Part I](https://luciana-lab.medium.com/rails-react-redux-thunk-user-auth-with-cookies-and-sessions-part-i-98c5ea19a8c7)\
 [Blog Post - Part II](https://luciana-lab.medium.com/rails-react-redux-thunk-user-auth-with-cookies-and-sessions-part-ii-e3f9bf036489)\

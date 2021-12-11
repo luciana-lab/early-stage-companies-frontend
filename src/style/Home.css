@@ -8,7 +8,6 @@
     background-color: #f1f1f1;
     padding-top: 20px;
     padding-bottom: 20px;
-
     display: block;
     position: relative;
     height: auto;
@@ -63,12 +62,13 @@
 
 #home-btn {
     position: absolute;
-    left: 50%;
-    /* -webkit-transform: translate(-50%, -50%);
+    left: 40%;
+    /* -webkit-transform
+    : translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%); */
     margin-top: 10px;
-    padding: 15px 20px;
+    padding: 15px;
     border: none;
     cursor: pointer;
     opacity: 0.9;
