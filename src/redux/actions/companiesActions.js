@@ -5,6 +5,7 @@ export function fetchCompanies() {
         fetch("/companies")
             .then(resp => resp.json())
             .then(data => dispatch({ type: GET_COMPANIES, payload: data }))
+            .catch(error => console.log("logout error", error))
     }
 }
 
@@ -20,6 +21,7 @@ export function addCompany(company) {
         })
             .then(resp => resp.json())
             .then(data => dispatch({ type: ADD_COMPANY, payload: data }))
+            .catch(error => console.log("logout error", error))
     }
 }
 
@@ -35,6 +37,7 @@ export function editCompany(company) {
         })
             .then(resp => resp.json())
             .then(data => dispatch({ type: EDIT_COMPANY, payload: data }))
+            .catch(error => console.log("logout error", error))
     }
 }
 
@@ -45,5 +48,6 @@ export function removeCompany(company) {
         })
             .then(resp => resp.json())
             .then(data => dispatch({ type: DELETE_COMPANY, payload: data }))
+            .catch(error => console.log("logout error", error))
     }
 }

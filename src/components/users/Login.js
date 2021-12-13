@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { login } from '../../actions/usersActions';
+import { login } from '../../redux/actions/usersActions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../style/Login.css';
@@ -7,7 +7,7 @@ import '../../style/Login.css';
 class Login extends Component {
     state = {
         email: "",
-        password: "",
+        password: ""
     }
 
     handleChange = e => {

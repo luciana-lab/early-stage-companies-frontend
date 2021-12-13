@@ -40,10 +40,12 @@ export function login(user) {
             .then(data => {
                 if (data.logged_in) {
                     dispatch({ type: LOGIN, payload: data })
-                } else {
-                    throw new Error()
                 }
-            }).catch(error => console.log("login error", error))
+                // } else {
+                //     throw new Error()
+                // }
+            })
+            .catch(error => console.log("login error", error))
     }
 }
 

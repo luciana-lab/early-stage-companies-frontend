@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removeCompany } from '../../actions/companiesActions';
-import { deleteContribution } from '../../actions/contributionsActions';
+import { removeCompany } from '../../redux/actions/companiesActions';
+import { deleteContribution } from '../../redux/actions/contributionsActions';
 import ContributionForm from '../contributions/ContributionForm';
 import { Link, Redirect } from 'react-router-dom';
 import '../../style/Company.css';

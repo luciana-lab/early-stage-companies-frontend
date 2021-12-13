@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import '.././style/Navbar.css';
 import logo from '.././style/logo.png';
-import { logout } from '../actions/usersActions';
+import { logout } from '../redux/actions/usersActions';
 import { connect } from 'react-redux';
 
 class Navbar extends Component {

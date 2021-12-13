@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { addCompany } from '../../actions/companiesActions';
+import { addCompany } from '../../redux/actions/companiesActions';
 import { connect } from 'react-redux';
 import '../../style/CompanyForm.css';
 import Login from '../users/Login';

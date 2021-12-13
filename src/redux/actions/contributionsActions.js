@@ -12,6 +12,7 @@ export function addContribution(contribution) {
         })
             .then(resp => resp.json())
             .then(data => dispatch({ type: ADD_CONTRIBUTION, payload: data }))
+            .catch(error => console.log("logout error", error))
     }
 }
 
@@ -22,5 +23,6 @@ export function deleteContribution(contribution) {
         })
             .then(resp => resp.json())
             .then(data => dispatch({ type: DELETE_CONTRIBUTION, payload: data }))
+            .catch(error => console.log("logout error", error))
     }
 }

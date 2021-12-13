@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addContribution } from '../../actions/contributionsActions';
+import { addContribution } from '../../redux/actions/contributionsActions';
 import '../../style/ContributionForm.css';
 
 class ContributionForm extends Component {
@@ -32,7 +32,6 @@ class ContributionForm extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        // dispatchAddContribution: contribution => dispatch(addContribution(contribution))
         dispatchAddContribution: contribution => dispatch(addContribution(contribution))
     }
 }

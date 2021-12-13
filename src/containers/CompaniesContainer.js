@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchCompanies } from '../actions/companiesActions';
+import { fetchCompanies } from '../redux/actions/companiesActions';
 import Pages from '../components/Pages';
 
 class CompaniesContainer extends Component {

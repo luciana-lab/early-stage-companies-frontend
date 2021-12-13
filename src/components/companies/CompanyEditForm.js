@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { editCompany } from '../../actions/companiesActions';
+import { editCompany } from '../../redux/actions/companiesActions';
 import '../../style/CompanyForm.css';
 import Login from '../users/Login';
 
@@ -19,6 +19,7 @@ class CompanyEditForm extends Component {
             video: this.company ? this.company.video : "",
             need_category: this.company ? this.company.need_category : "",
             need: this.company ? this.company.need : ""
+            // error: ""
         }
     }
 
@@ -50,7 +51,7 @@ class CompanyEditForm extends Component {
                             <br />
 
                             <label htmlFor="company-industry-select">Industry</label>
-                            <select name="industry" id="company-industry-select" value={this.state.industry} onChange={this.handleChange} required>
+                            <select name="industry" id="company-industry-select" value={this.state.industry} onChange={this.handleChange}>
                                 <option value="none" selecteddisabledhidden="true">Select an Option</option>
                                 <option value="Agriculture">Agriculture</option>
                                 <option value="Arts">Arts</option>
@@ -86,7 +87,7 @@ class CompanyEditForm extends Component {
                             <br />
 
                             <label htmlFor="company-need-category-select">Help Category</label>
-                            <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange} required>
+                            <select name="need_category" id="company-need-category-select" value={this.state.need_category} onChange={this.handleChange}>
                                 <option value="none" selecteddisabledhidden="true">Select an Option</option>
                                 <option value="Admin">Admin</option>
                                 <option value="Finance">Finance</option>

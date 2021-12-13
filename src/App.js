@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 import CompaniesContainer from './containers/CompaniesContainer';
-import { loginStatus } from './actions/usersActions';
+import { loginStatus } from './redux/actions/usersActions';
 import { connect } from 'react-redux';
 
 class App extends Component {
@@ -20,6 +20,7 @@ class App extends Component {
   }
 
 }
+
 const mapStateToProps = state => {
   return {
     users: state.users
