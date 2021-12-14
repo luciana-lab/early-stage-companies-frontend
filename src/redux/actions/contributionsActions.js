@@ -1,4 +1,4 @@
-import { ADD_CONTRIBUTION, DELETE_CONTRIBUTION } from "./constants";
+import { ADD_CONTRIBUTION, DELETE_CONTRIBUTION } from "../constants";
 
 export function addContribution(contribution) {
     return dispatch => {
@@ -12,7 +12,7 @@ export function addContribution(contribution) {
         })
             .then(resp => resp.json())
             .then(data => dispatch({ type: ADD_CONTRIBUTION, payload: data }))
-            .catch(error => console.log("logout error", error))
+            .catch(error => console.log("fetch contributions", error))
     }
 }
 
@@ -23,6 +23,6 @@ export function deleteContribution(contribution) {
         })
             .then(resp => resp.json())
             .then(data => dispatch({ type: DELETE_CONTRIBUTION, payload: data }))
-            .catch(error => console.log("logout error", error))
+            .catch(error => console.log("delete contribution", error))
     }
 }

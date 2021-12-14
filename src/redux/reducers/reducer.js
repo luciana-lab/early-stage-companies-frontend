@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, LOGIN, LOGOUT, DELETE_CONTRIBUTION } from '../actions/constants';
+import { ADD_COMPANY, ADD_CONTRIBUTION, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES, LOGIN, LOGOUT, DELETE_CONTRIBUTION } from '../constants';
 
 const rootReducer = combineReducers({
     users: usersReducer,

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Error = ({ routerProps }) => {
-    const componentWillMount = () => {
+    const redirect = () => {
         setTimeout(() => {
             routerProps.history.push("/companies")
         }, 5000)
@@ -9,9 +9,10 @@ const Error = ({ routerProps }) => {
     return (
         <div>
             <h3 style={{ textAlign: 'center' }}>Oops! This page doesn't exist.</h3>
-            {componentWillMount()}
+            {redirect()}
         </div>
     )
 }
+
 
 export default Error;

@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT } from "./constants";
+import { LOGIN, LOGOUT } from "../constants";
 
 export function signup(user) {
     return dispatch => {

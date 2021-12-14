@@ -23,7 +23,6 @@ class Navbar extends Component {
                             <li id="navbar-li-logout"><button onClick={() => this.props.logout(this.state)} id="navbar-logout-btn">LOGOUT</button></li>
                             : <li id="navbar-li-signin"><NavLink exact to="/signin">SIGN IN</NavLink></li>
                         }
-
                     </ul>
                 </nav>
             </div>

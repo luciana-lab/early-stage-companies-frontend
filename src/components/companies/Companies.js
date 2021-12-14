@@ -18,8 +18,6 @@ const Companies = ({ companies }) => {
                                         <Link to={`/companies/${company.id}`} style={{ textDecoration: 'none' }}>
                                             <img src={company.image ? company.image : "https://corefact-marketing.s3.us-west-1.amazonaws.com/random/upload-image.png"} alt="company feature" id="companies-right-img" />
                                             <h3 id="feature-company">{company.name && company.name.toUpperCase()}</h3>
-                                            {/* <p id="feature-industry">Industry: {company.industry}</p> */}
-                                            {/* <p id="feature-help-category">Help in {company.need_category}</p> */}
                                             <p id="feature-industry">{company.industry ? `Industry: ${company.industry}` : null}</p>
                                             <p id="feature-help-category">{company.need_category ? `Help in ${company.need_category}` : null}</p>
                                         </Link>
