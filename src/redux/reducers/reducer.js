@@ -24,6 +24,7 @@ function usersReducer(state = {}, action) {
 function companiesReducer(state = [], action) {
     switch (action.type) {
         case GET_COMPANIES:
+            // console.log("f") //5th
             return action.payload
 
         case ADD_COMPANY:

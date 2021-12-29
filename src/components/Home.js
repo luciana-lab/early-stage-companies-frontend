@@ -21,7 +21,6 @@ const Home = ({ routerProps }) => {
             </div>
             <Footer />
         </div>
-
     )
 }
 

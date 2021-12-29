@@ -5,7 +5,9 @@ import Pages from '../components/Pages';
 
 class CompaniesContainer extends Component {
     componentDidMount() {
+        // console.log("a") // 1st
         this.props.fetchCompanies()
+        // console.log("b") // 3rd
     }
 
     render() {
@@ -15,7 +17,6 @@ class CompaniesContainer extends Component {
             </div>
         )
     }
-
 }
 
 const mapStateToProps = state => {

@@ -1,12 +1,17 @@
 import { ADD_COMPANY, DELETE_COMPANY, EDIT_COMPANY, GET_COMPANIES } from "../constants";
 
 export function fetchCompanies() {
+    // console.log("c") // 2nd
     return dispatch => {
         fetch("/companies")
-            .then(resp => resp.json())
+            .then(resp => {
+                // console.log("d") // 4th
+                return resp.json()
+            })
             .then(data => dispatch({ type: GET_COMPANIES, payload: data }))
             .catch(error => console.log("fetch companies", error))
     }
+    // console.log("e")
 }
 
 export function addCompany(company) {

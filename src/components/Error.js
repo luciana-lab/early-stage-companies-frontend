@@ -14,5 +14,4 @@ const Error = ({ routerProps }) => {
     )
 }
 
-
 export default Error;

@@ -20,7 +20,6 @@ class Login extends Component {
         e.preventDefault()
         this.props.dispatchLogin(this.state)
         this.props.routerProps.history.push("/companies")
-
     }
 
     render() {

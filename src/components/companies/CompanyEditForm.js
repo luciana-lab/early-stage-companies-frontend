@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { editCompany } from '../../redux/actions/companiesActions';
 import '../../style/CompanyForm.css';
 import Login from '../users/Login';
+import { Redirect } from 'react-router-dom';
 
 class CompanyEditForm extends Component {
     constructor(props) {
@@ -19,7 +20,6 @@ class CompanyEditForm extends Component {
             video: this.company ? this.company.video : "",
             need_category: this.company ? this.company.need_category : "",
             need: this.company ? this.company.need : ""
-            // error: ""
         }
     }
 
@@ -105,7 +105,6 @@ class CompanyEditForm extends Component {
 
                             <input type="submit" value="Submit" id="company-form-btn" />
                         </form>
-
                     </div>
                 }
             </div>
