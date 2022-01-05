@@ -1,8 +1,8 @@
-import { BASE_URL, ADD_CONTRIBUTION, DELETE_CONTRIBUTION } from "../constants";
+import { ADD_CONTRIBUTION, DELETE_CONTRIBUTION } from "../constants";
 
 export function addContribution(contribution) {
     return dispatch => {
-        fetch(`${BASE_URL}/contributions`, {
+        fetch(`/contributions`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -11,14 +11,17 @@ export function addContribution(contribution) {
             body: JSON.stringify(contribution)
         })
             .then(resp => resp.json())
-            .then(data => dispatch({ type: ADD_CONTRIBUTION, payload: data }))
+            .then(data => {
+                console.log("addContribution", data)
+                dispatch({ type: ADD_CONTRIBUTION, payload: data })
+            })
             .catch(error => console.log("fetch contributions", error))
     }
 }
 
 export function deleteContribution(contribution) {
     return dispatch => {
-        fetch(`${BASE_URL}/contributions/${contribution.id}`, {
+        fetch(`/contributions/${contribution.id}`, {
             method: "DELETE"
         })
             .then(resp => resp.json())

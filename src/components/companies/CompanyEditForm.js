@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { editCompany } from '../../redux/actions/companiesActions';
 import '../../style/CompanyForm.css';
 import Login from '../users/Login';
-import { Redirect } from 'react-router-dom';
 
 class CompanyEditForm extends Component {
     constructor(props) {

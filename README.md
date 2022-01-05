@@ -50,7 +50,7 @@ A company has name, industry, description, image, website, video, need category,
 A contribution has content.
 
 [Flow diagram](https://drive.google.com/file/d/1evKyGhqsBa7Cxc_P0qdZnGUnjlXYOjLq/view?usp=sharing)
-## Instalation
+## Installation
 Fork and clone this repo.
 
 Install the backend.
