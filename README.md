@@ -1,3 +1,7 @@
+⚠ This repo was merged into the backend in order to deploy on Heroku. Please, go to the [Rails frontend](https://github.com/luciana-lab/early-stage-companies-backend) and follow the instructions.
+
+---
+
 # Early Stage Companies Contributions
 This is the frontend of the application that the user can view and interact with it. Please, also install the [Rails frontend](https://github.com/luciana-lab/early-stage-companies-backend) and follow the installation instruction.
 
